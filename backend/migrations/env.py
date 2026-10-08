@@ -1,14 +1,17 @@
 """Run Alembic through the existing asyncpg driver."""
 
 import asyncio
+import logging
 
 from alembic import context
 from sqlalchemy import Connection, pool
+from sqlalchemy.exc import OperationalError
 from sqlalchemy.ext.asyncio import create_async_engine
 
 from documind.core.config import settings
 
 URL = str(settings.database_url).replace("postgresql://", "postgresql+asyncpg://", 1)
+logger = logging.getLogger("alembic.runtime.migration")
 
 
 def run_migrations(connection: Connection) -> None:
@@ -22,9 +25,20 @@ def run_migrations(connection: Connection) -> None:
 async def run_online() -> None:
     engine = create_async_engine(URL, poolclass=pool.NullPool)
     try:
-        # The schema lookup also starts a transaction; commit the whole upgrade.
-        async with engine.begin() as connection:
-            await connection.run_sync(run_migrations)
+        for attempt in range(10):
+            try:
+                # The schema lookup also starts a transaction; commit the whole upgrade.
+                async with engine.begin() as connection:
+                    await connection.run_sync(run_migrations)
+                return
+            except OperationalError:
+                if attempt == 9:
+                    raise
+                logger.warning(
+                    "Database connection not ready during migration (attempt %d/10); retrying in 1s",
+                    attempt + 1,
+                )
+                await asyncio.sleep(1)
     finally:
         await engine.dispose()
 

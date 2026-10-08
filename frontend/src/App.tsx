@@ -126,7 +126,7 @@ export default function App() {
         </div>
         <div className="composer-wrap"><form className="composer" onSubmit={event => { event.preventDefault(); send(); }}>
           <textarea aria-label="Your question" placeholder={activeDocument ? 'Ask about your document, an order, or a support ticket…' : 'Ask about an order or request a support ticket…'} value={question} maxLength={2000}
-            disabled={busy || uploading || !!deleting} rows={2} onChange={event => setQuestion(event.target.value)} onKeyDown={event => {
+            disabled={busy || uploading || !!deleting} rows={question.includes('\n') ? 2 : 1} onChange={event => setQuestion(event.target.value)} onKeyDown={event => {
               if (event.key === 'Enter' && !event.shiftKey && !event.nativeEvent.isComposing) { event.preventDefault(); send(); }
             }} />
           <button className="send-button" type="submit" aria-label="Send question" disabled={busy || uploading || !!deleting || !question.trim()}><Icon name="send" size={21} /></button>

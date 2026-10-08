@@ -15,6 +15,22 @@ then click **Authorize** and **Close**. Enter the key by itself; Swagger adds th
 `Bearer` prefix. This public demo credential accesses Alice's seeded demo account.
 Bob's demo key is `dev-bob-key`.
 
+The demo runs on a single **Google Cloud Compute Engine VM**:
+
+| Component | Deployment specification |
+| --- | --- |
+| Machine type | `e2-medium` — 2 shared vCPUs, 4 GB RAM |
+| Operating system | Ubuntu 24.04 LTS |
+| Boot disk | 30 GB balanced persistent disk |
+| Application stack | Docker Compose: frontend, FastAPI, PostgreSQL + pgvector |
+| Public access | HTTPS through Caddy and Cloudflare |
+
+Gemini handles embedding and answer generation remotely, so the VM does not need
+a GPU or local model weights. This modest configuration supports the review demo
+without a larger VM or separate application and database servers. Capacity under
+heavy concurrent traffic has not been benchmarked; increase resources based on
+measured demand. VM, disk, and network charges still apply.
+
 For a quick check, expand `GET /api/v1/documents`, click **Try it out**, then
 **Execute**. To test RAG, upload `data/sample/handbook.pdf` through
 `POST /api/v1/documents`, copy its returned `document_id`, then call
@@ -91,9 +107,10 @@ without waiting for the comparison to finish.
 | Readiness | [http://localhost:8000/api/v1/health](http://localhost:8000/api/v1/health) |
 | PostgreSQL | `localhost:5432` |
 
-The API runs `alembic upgrade head` before Uvicorn starts. Nginx serves the frontend
-and proxies `/api/` to the backend; the Gemini key never reaches the browser. If
-Gemini is unavailable or rate limited, inspect `docker compose logs -f --tail=100 api`.
+The API runs `alembic upgrade head` before Uvicorn starts and retries brief database
+connection failures during startup. Nginx serves the frontend and proxies `/api/` to
+the backend; the Gemini key never reaches the browser. If startup fails, inspect
+`docker compose logs -f --tail=100 api`; the same logs show Gemini provider errors.
 
 ## Frontend walkthrough
 
