@@ -9,10 +9,19 @@ are removed by the database's cascading foreign key.
 
 The deployed review environment is available at
 [documind.aashish-regmi.com.np](https://documind.aashish-regmi.com.np).
-The public API documentation is [documind.aashish-regmi.com.np/docs](https://documind.aashish-regmi.com.np/docs).
-Use the **Authorize** button with the demo key shown in the local setup instructions,
-then use **Try it out** on the document and chat routes. The live deployment uses the
-same `/api/v1` contract and seeded demo users as the reproducible Docker setup below.
+The public API documentation is [Swagger UI](https://documind.aashish-regmi.com.np/docs).
+To authorize, click **Authorize**, enter `dev-alice-key` in the **Value** field,
+then click **Authorize** and **Close**. Enter the key by itself; Swagger adds the
+`Bearer` prefix. This public demo credential accesses Alice's seeded demo account.
+Bob's demo key is `dev-bob-key`.
+
+For a quick check, expand `GET /api/v1/documents`, click **Try it out**, then
+**Execute**. To test RAG, upload `data/sample/handbook.pdf` through
+`POST /api/v1/documents`, copy its returned `document_id`, then call
+`POST /api/v1/chat-messages` with `stream: false` and that ID in `document_ids`.
+The example question and request body are in the [Swagger walkthrough](#swagger-walkthrough).
+The live deployment uses the same `/api/v1` contract and seeded demo users as the
+reproducible Docker setup below.
 
 If the live environment is temporarily unavailable, the complete application can be
 run locally without changing the frontend or API contract.
@@ -170,8 +179,11 @@ Agent document search uses hybrid retrieval to avoid an extra unbudgeted reranke
 
 ## Swagger walkthrough
 
-Authorize with `dev-alice-key`, upload the sample through `POST /api/v1/documents`,
-copy its `document_id`, then call:
+In Swagger UI, click **Authorize**, paste `dev-alice-key` into the **Value** field
+without adding `Bearer`, then click **Authorize** and **Close**. This authorizes
+requests as Alice. Use `dev-bob-key` to test Bob's isolated account. Upload
+`data/sample/handbook.pdf` through `POST /api/v1/documents` and copy the returned
+`document_id`, then call:
 
 ```json
 {
