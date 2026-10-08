@@ -565,7 +565,8 @@ p, h1, h2, h3, h4 {
   background: #fcfdfb;
   border-radius: 14px;
   display: flex;
-  padding: 15px 13px 12px 19px;
+  min-height: 64px;
+  padding: 10px 13px 10px 19px;
   gap: 10px;
   align-items: center;
   box-shadow: 0 3px 15px #374c3910;
@@ -673,14 +674,17 @@ p, h1, h2, h3, h4 {
     display: none;
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 760px) {
   .app {
     height: auto;
     min-height: 100dvh;
   }
   .topbar {
-    height: 66px;
-    padding: 0 19px;
+    min-height: 66px;
+    height: auto;
+    padding: 12px 16px;
+    gap: 12px;
+    flex-wrap: wrap;
   }
   .brand {
     font-size: 20px;
@@ -710,8 +714,7 @@ p, h1, h2, h3, h4 {
     margin: 0;
   }
   .upload-zone > span:last-child {
-    margin-left: auto;
-    font-size: 10px;
+    font-size: 13px;
   }
   .document-list {
     max-height: 160px;
@@ -722,16 +725,25 @@ p, h1, h2, h3, h4 {
     display: none;
   }
   .chat-panel {
-    min-height: 570px;
+    min-height: 60dvh;
   }
   .chat-heading {
-    padding: 24px 20px 20px;
+    padding: 20px 16px;
+    flex-wrap: wrap;
+  }
+  .chat-heading > div {
+    min-width: 0;
+    flex: 1 1 220px;
+  }
+  .chat-heading p {
+    overflow-wrap: anywhere;
   }
   .chat-heading h1 {
-    font-size: 17px;
+    font-size: 22px;
+    line-height: 1.3;
   }
   .conversation {
-    padding: 20px;
+    padding: 20px 16px;
     overflow: visible;
   }
   .welcome {
@@ -741,18 +753,46 @@ p, h1, h2, h3, h4 {
     font-size: 27px;
   }
   .welcome > p {
-    font-size: 13px;
+    font-size: 15px;
   }
   .composer-wrap {
-    padding: 15px 20px 22px;
+    position: sticky;
+    bottom: 0;
+    padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+    border-top: 1px solid #e7ebe8;
+    z-index: 1;
   }
   .composer-note {
-    font-size: 9px;
+    font-size: 12px;
   }
   .question-bubble {
     max-width: 90%;
   }
   .answer-text {
-    font-size: 13px;
+    font-size: 15px;
+  }
+  .assistant-message {
+    gap: 9px;
+  }
+  .source-heading {
+    display: grid;
+    grid-template-columns: 20px 16px minmax(0, 1fr) 20px;
+    gap: 8px;
+  }
+  .source-location {
+    display: block;
+    grid-column: 3;
+    grid-row: 2;
+    margin-left: 0;
+    white-space: normal;
+  }
+  .expand-mark {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+    margin-left: 0;
+  }
+  .document-delete, .send-button, .quiet-button {
+    min-width: 44px;
+    min-height: 44px;
   }
 }

@@ -1,12 +1,15 @@
 """Gemini REST embeddings with bounded batches, timeout, and safe errors."""
 
 import asyncio
+import logging
 import math
 
 import httpx
 
 from documind.core.config import settings
 from documind.exceptions import AppError
+
+logger = logging.getLogger(__name__)
 
 
 class GeminiEmbeddings:
@@ -67,17 +70,30 @@ class GeminiEmbeddings:
                     json=payload,
                     timeout=20,
                 )
-            except httpx.TransportError:
+            except httpx.TransportError as error:
+                logger.warning(
+                    "Gemini embedding request failed (attempt %d/3, transport=%s)",
+                    attempt + 1,
+                    type(error).__name__,
+                )
                 response = None
             if response is not None:
                 if response.is_success:
                     return response
                 if response.status_code not in (429, 500, 502, 503, 504):
+                    logger.warning(
+                        "Gemini rejected embedding request (HTTP %d)", response.status_code
+                    )
                     raise AppError(
                         502,
                         "embedding_rejected",
                         "Gemini rejected the upload. Check the API key and file.",
                     )
+                logger.warning(
+                    "Gemini embedding service unavailable (attempt %d/3, HTTP %d)",
+                    attempt + 1,
+                    response.status_code,
+                )
             if attempt < 2:
                 await asyncio.sleep(0.5 * (2**attempt))
         raise AppError(
