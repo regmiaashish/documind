@@ -5,6 +5,18 @@ passages. It contains a React frontend, FastAPI backend, and PostgreSQL + pgvect
 Users can delete their own documents with the trash button; the document's passages
 are removed by the database's cascading foreign key.
 
+## Live demo
+
+The deployed review environment is available at
+[documind.aashish-regmi.com.np](https://documind.aashish-regmi.com.np).
+The public API documentation is [documind.aashish-regmi.com.np/docs](https://documind.aashish-regmi.com.np/docs).
+Use the **Authorize** button with the demo key shown in the local setup instructions,
+then use **Try it out** on the document and chat routes. The live deployment uses the
+same `/api/v1` contract and seeded demo users as the reproducible Docker setup below.
+
+If the live environment is temporarily unavailable, the complete application can be
+run locally without changing the frontend or API contract.
+
 ## Setup
 
 Install Docker Compose, Make, and uv. From the repository root:
