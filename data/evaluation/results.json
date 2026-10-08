@@ -1,0 +1,1227 @@
+{
+  "started_at": "2026-10-08T06:02:04.522939Z",
+  "document_sha256": "b5b4eb4fee9fb9aee09427f368559275808aca33e66881207bafdfa609226ebf",
+  "questions_sha256": "84161698d1b55b9edacefb62da930a25ef6d1c3944d102f63e65228ed5ccf221",
+  "configuration": {
+    "embedding_model": "gemini-embedding-2",
+    "embedding_dimensions": 768,
+    "chunk_overlap": 50,
+    "max_chunks": 200,
+    "llm_primary_model": "gemini-3.5-flash-lite",
+    "llm_fallback_model": "gemini-3.8-flash",
+    "llm_max_output_tokens": 1024,
+    "retrieval_candidates": 12,
+    "context_top_n": 5,
+    "similarity_threshold": 0.45,
+    "request_timeout_seconds": 120,
+    "owner_id": "00000000-0000-0000-0000-000000000001",
+    "pipeline_sha256": "e3aeeb2977fdbe7c0d5d710d78c9b16e1af591e03a5c3544a08f128182a89912"
+  },
+  "results": [
+    {
+      "case": {
+        "id": "q01",
+        "question": "How many days of annual leave do employees receive?",
+        "expected_answer": "20 days of paid annual leave per calendar year.",
+        "section": "1.2 Annual leave",
+        "page": 1,
+        "evidence": [
+          "20 days of paid annual leave"
+        ],
+        "expected_refusal": false
+      },
+      "chunk_size": 300,
+      "retrieval_mode": "vector",
+      "chunks": [
+        {
+          "chunk_id": "f84ae30e-059f-4049-8f4c-ba31f1360e77",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 0,
+          "page": 1,
+          "content": "DocuMind sample | Fictional policies | October 2026\n1\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nPeople and working hours\n1.1 Working week\nNorthstar Supply is a fictional company used for this DocuMind demonstration. The normal working week\nis Monday through Friday. Office hours are 09:00 to 17:00 Nepal Standard Time, with a one-hour lunch\nbreak. Employees work from the Kathmandu office on Tuesday and Thursday and may work remotely on\nthe other working days. A manager can approve a different arrangement for a specific week. Any change\nmust be recorded in the team calendar so colleagues can plan coverage. Public holidays follow the annual\ncompany calendar rather than an individual employee's preferred schedule.\n1.2 Annual leave\nEvery full-time employee receives 20 days of paid annual leave per calendar year. Employees joining\nduring the year receive a prorated allowance. Request annual leave at least five working days before the\nfirst day away. The line manager approves requests after checking team coverage. Up to five unused\ndays may carry over into the following year, and those carried days expire on March 31. Leave is counted\nin working days; weekends and company public holidays do not reduce the allowance. An employee\nshould arrange a handover before leaving and add an out-of-office message naming the colleague\nproviding cover.\n1.3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick",
+          "similarity": 0.7499940246340064,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7dbd587-5b7c-469e-8f71-9f7a4e0a97a3",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 1,
+          "page": 1,
+          "content": "3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick leave does not carry over. The company supplies one laptop and\none headset to each full-time employee. Report lost equipment to the IT help desk immediately. Home\ninternet reimbursement is capped at NPR 1,500 per month and requires a receipt. Equipment must be\nreturned within three working days of the final employment date. These rules apply to employees, not\nindependent contractors.",
+          "similarity": 0.7265390211229644,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7d73d8d-c1a7-4d39-b132-dd01c5d66ea7",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 5,
+          "page": 3,
+          "content": "rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR 1,200 per\nday. Taxi expenses above NPR 2,000 require prior manager approval. Finance reviews complete claims\nevery Friday, and approved claims are paid in the next payroll cycle. Missing receipts delay review.\nPersonal purchases and fines are not reimbursed. Foreign travel requires written approval before booking,\nbut this handbook does not specify international meal allowances. Ask Finance for that policy rather than\nassuming domestic limits apply abroad. All figures in this handbook are fictional demo data.",
+          "similarity": 0.6382006406784103,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "91aa0567-9800-4f8a-a40b-9cbc33cfea73",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 4,
+          "page": 3,
+          "content": "DocuMind sample | Fictional policies | October 2026\n3\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nSecurity and expenses\n3.1 Data handling\nCustomer addresses, phone numbers, and payment references are confidential. Staff may view only the\nrecords required for their assigned work. Customer data must not be copied into personal email accounts\nor shared in public chat channels. Lock your screen whenever leaving your desk. Suspected data\nexposure must be reported to security@northstar.example within one hour of discovery. Include what\nhappened, when it was noticed, and which records may have been affected. Do not delete evidence while\ninvestigating. The security team coordinates containment and determines whether any external\nnotification is required. A colleague's access does not grant you permission to view the same records.\n3.2 Access and retention\nUse a unique company account and enable multi-factor authentication. Never share passwords or\nauthentication codes. IT removes departing employees' access by 18:00 on their final working day.\nInternal policy documents are retained for three years after replacement. Support tickets are retained for\ntwo years after closure. These retention periods apply to the company's managed systems; employees\nmust not maintain separate personal archives. Access requests need approval from both the line manager\nand the data owner. If a request is denied, contact the approvers for clarification rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR",
+          "similarity": 0.6323812384832654,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "195bd0da-b41c-40cd-a609-5730d0ad45d2",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 2,
+          "page": 2,
+          "content": "DocuMind sample | Fictional policies | October 2026\n2\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nOrders and customer support\n2.1 Shipping policy\nStandard domestic shipping takes three to five working days after dispatch. Express shipping takes one to\ntwo working days after dispatch and costs NPR 350 per order. Standard shipping is free for orders valued\nat NPR 3,000 or more; smaller orders have a NPR 150 shipping fee. Estimated shipping times exclude\npublic holidays. Customers receive a tracking reference after dispatch. A policy document explains\nshipping rules but cannot tell you the current status of a specific order. Current order status must be\nlooked up in the order database. A tracking reference does not prove that the parcel has been delivered.\n2.2 Returns and refunds\nUnused products may be returned within 14 calendar days of delivery. Customers must retain the original\npackaging and provide an order reference. Damaged products should be reported within 48 hours of\ndelivery, with a photograph of the product and packaging. Refunds are processed within seven working\ndays after the warehouse accepts a return. Refunds go to the original payment method. Custom-made\nproducts cannot be returned unless they are damaged or incorrectly supplied. The support team must not\npromise a refund before checking eligibility. Return transport for an approved damaged product is paid by\nthe company.\n2.3 Support commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The",
+          "similarity": 0.6096747880980257,
+          "keyword_match": false
+        }
+      ],
+      "answer": {
+        "answer": "Every full-time employee receives 20 days of paid annual leave per calendar year [1]. Employees who join during the year receive a prorated allowance [1].",
+        "citations": [
+          {
+            "source_id": 1,
+            "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+            "filename": "handbook.pdf",
+            "chunk_index": 0,
+            "page": 1,
+            "snippet": "DocuMind sample | Fictional policies | October 2026\n1\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nPeople and working hours\n1.1 Working week\nNorthstar Supply is a fictional company used for this DocuMind demonstration. The normal working week\nis Monday through Friday. Office hours are 09:00 to 17:00 Nepal Standard Time, with a one-hour lunch\nbreak. Employees work from the Kathmandu office on Tuesday and Thursday and may work remotely on\nthe other working days. A manager can approve a different arrangement f"
+          }
+        ],
+        "refused": false,
+        "retrieval_mode": "vector",
+        "model": "gemini-3.5-flash-lite",
+        "latency_ms": 2111,
+        "route": "rag",
+        "confirmation": null
+      },
+      "latency_ms": 2111,
+      "hit_at_5": true,
+      "error": null,
+      "supported": null,
+      "correct": null,
+      "review_notes": ""
+    },
+    {
+      "case": {
+        "id": "q02",
+        "question": "How early should annual leave be requested?",
+        "expected_answer": "At least five working days before the first day away.",
+        "section": "1.2 Annual leave",
+        "page": 1,
+        "evidence": [
+          "at least five working days"
+        ],
+        "expected_refusal": false
+      },
+      "chunk_size": 300,
+      "retrieval_mode": "vector",
+      "chunks": [
+        {
+          "chunk_id": "f84ae30e-059f-4049-8f4c-ba31f1360e77",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 0,
+          "page": 1,
+          "content": "DocuMind sample | Fictional policies | October 2026\n1\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nPeople and working hours\n1.1 Working week\nNorthstar Supply is a fictional company used for this DocuMind demonstration. The normal working week\nis Monday through Friday. Office hours are 09:00 to 17:00 Nepal Standard Time, with a one-hour lunch\nbreak. Employees work from the Kathmandu office on Tuesday and Thursday and may work remotely on\nthe other working days. A manager can approve a different arrangement for a specific week. Any change\nmust be recorded in the team calendar so colleagues can plan coverage. Public holidays follow the annual\ncompany calendar rather than an individual employee's preferred schedule.\n1.2 Annual leave\nEvery full-time employee receives 20 days of paid annual leave per calendar year. Employees joining\nduring the year receive a prorated allowance. Request annual leave at least five working days before the\nfirst day away. The line manager approves requests after checking team coverage. Up to five unused\ndays may carry over into the following year, and those carried days expire on March 31. Leave is counted\nin working days; weekends and company public holidays do not reduce the allowance. An employee\nshould arrange a handover before leaving and add an out-of-office message naming the colleague\nproviding cover.\n1.3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick",
+          "similarity": 0.6856461967720451,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7dbd587-5b7c-469e-8f71-9f7a4e0a97a3",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 1,
+          "page": 1,
+          "content": "3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick leave does not carry over. The company supplies one laptop and\none headset to each full-time employee. Report lost equipment to the IT help desk immediately. Home\ninternet reimbursement is capped at NPR 1,500 per month and requires a receipt. Equipment must be\nreturned within three working days of the final employment date. These rules apply to employees, not\nindependent contractors.",
+          "similarity": 0.6421599174833249,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7d73d8d-c1a7-4d39-b132-dd01c5d66ea7",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 5,
+          "page": 3,
+          "content": "rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR 1,200 per\nday. Taxi expenses above NPR 2,000 require prior manager approval. Finance reviews complete claims\nevery Friday, and approved claims are paid in the next payroll cycle. Missing receipts delay review.\nPersonal purchases and fines are not reimbursed. Foreign travel requires written approval before booking,\nbut this handbook does not specify international meal allowances. Ask Finance for that policy rather than\nassuming domestic limits apply abroad. All figures in this handbook are fictional demo data.",
+          "similarity": 0.6093656835149049,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "91aa0567-9800-4f8a-a40b-9cbc33cfea73",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 4,
+          "page": 3,
+          "content": "DocuMind sample | Fictional policies | October 2026\n3\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nSecurity and expenses\n3.1 Data handling\nCustomer addresses, phone numbers, and payment references are confidential. Staff may view only the\nrecords required for their assigned work. Customer data must not be copied into personal email accounts\nor shared in public chat channels. Lock your screen whenever leaving your desk. Suspected data\nexposure must be reported to security@northstar.example within one hour of discovery. Include what\nhappened, when it was noticed, and which records may have been affected. Do not delete evidence while\ninvestigating. The security team coordinates containment and determines whether any external\nnotification is required. A colleague's access does not grant you permission to view the same records.\n3.2 Access and retention\nUse a unique company account and enable multi-factor authentication. Never share passwords or\nauthentication codes. IT removes departing employees' access by 18:00 on their final working day.\nInternal policy documents are retained for three years after replacement. Support tickets are retained for\ntwo years after closure. These retention periods apply to the company's managed systems; employees\nmust not maintain separate personal archives. Access requests need approval from both the line manager\nand the data owner. If a request is denied, contact the approvers for clarification rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR",
+          "similarity": 0.5969973384439154,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "65538026-aefd-4805-a683-8b8b32c6a75e",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 3,
+          "page": 2,
+          "content": "commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The support mailbox is\nsupport@northstar.example. Creating a support ticket requires the customer to confirm the proposed\ndescription before it is submitted. A confirmation is not a guarantee of a refund or replacement. If the order\ndatabase cannot be reached, explain that the status is temporarily unavailable and ask the customer to\nretry. Never infer live status from these policy timings.",
+          "similarity": 0.5812815601015558,
+          "keyword_match": false
+        }
+      ],
+      "answer": {
+        "answer": "Annual leave should be requested at least five working days before the first day away [1].",
+        "citations": [
+          {
+            "source_id": 1,
+            "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+            "filename": "handbook.pdf",
+            "chunk_index": 0,
+            "page": 1,
+            "snippet": "DocuMind sample | Fictional policies | October 2026\n1\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nPeople and working hours\n1.1 Working week\nNorthstar Supply is a fictional company used for this DocuMind demonstration. The normal working week\nis Monday through Friday. Office hours are 09:00 to 17:00 Nepal Standard Time, with a one-hour lunch\nbreak. Employees work from the Kathmandu office on Tuesday and Thursday and may work remotely on\nthe other working days. A manager can approve a different arrangement f"
+          }
+        ],
+        "refused": false,
+        "retrieval_mode": "vector",
+        "model": "gemini-3.5-flash-lite",
+        "latency_ms": 1880,
+        "route": "rag",
+        "confirmation": null
+      },
+      "latency_ms": 1880,
+      "hit_at_5": true,
+      "error": null,
+      "supported": null,
+      "correct": null,
+      "review_notes": ""
+    },
+    {
+      "case": {
+        "id": "q03",
+        "question": "How much annual leave carries over, and when does it expire?",
+        "expected_answer": "Up to five unused days; they expire on March 31.",
+        "section": "1.2 Annual leave",
+        "page": 1,
+        "evidence": [
+          "five unused days",
+          "March 31"
+        ],
+        "expected_refusal": false
+      },
+      "chunk_size": 300,
+      "retrieval_mode": "vector",
+      "chunks": [
+        {
+          "chunk_id": "f84ae30e-059f-4049-8f4c-ba31f1360e77",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 0,
+          "page": 1,
+          "content": "DocuMind sample | Fictional policies | October 2026\n1\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nPeople and working hours\n1.1 Working week\nNorthstar Supply is a fictional company used for this DocuMind demonstration. The normal working week\nis Monday through Friday. Office hours are 09:00 to 17:00 Nepal Standard Time, with a one-hour lunch\nbreak. Employees work from the Kathmandu office on Tuesday and Thursday and may work remotely on\nthe other working days. A manager can approve a different arrangement for a specific week. Any change\nmust be recorded in the team calendar so colleagues can plan coverage. Public holidays follow the annual\ncompany calendar rather than an individual employee's preferred schedule.\n1.2 Annual leave\nEvery full-time employee receives 20 days of paid annual leave per calendar year. Employees joining\nduring the year receive a prorated allowance. Request annual leave at least five working days before the\nfirst day away. The line manager approves requests after checking team coverage. Up to five unused\ndays may carry over into the following year, and those carried days expire on March 31. Leave is counted\nin working days; weekends and company public holidays do not reduce the allowance. An employee\nshould arrange a handover before leaving and add an out-of-office message naming the colleague\nproviding cover.\n1.3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick",
+          "similarity": 0.692628523487703,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7dbd587-5b7c-469e-8f71-9f7a4e0a97a3",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 1,
+          "page": 1,
+          "content": "3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick leave does not carry over. The company supplies one laptop and\none headset to each full-time employee. Report lost equipment to the IT help desk immediately. Home\ninternet reimbursement is capped at NPR 1,500 per month and requires a receipt. Equipment must be\nreturned within three working days of the final employment date. These rules apply to employees, not\nindependent contractors.",
+          "similarity": 0.6704335612317062,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "91aa0567-9800-4f8a-a40b-9cbc33cfea73",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 4,
+          "page": 3,
+          "content": "DocuMind sample | Fictional policies | October 2026\n3\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nSecurity and expenses\n3.1 Data handling\nCustomer addresses, phone numbers, and payment references are confidential. Staff may view only the\nrecords required for their assigned work. Customer data must not be copied into personal email accounts\nor shared in public chat channels. Lock your screen whenever leaving your desk. Suspected data\nexposure must be reported to security@northstar.example within one hour of discovery. Include what\nhappened, when it was noticed, and which records may have been affected. Do not delete evidence while\ninvestigating. The security team coordinates containment and determines whether any external\nnotification is required. A colleague's access does not grant you permission to view the same records.\n3.2 Access and retention\nUse a unique company account and enable multi-factor authentication. Never share passwords or\nauthentication codes. IT removes departing employees' access by 18:00 on their final working day.\nInternal policy documents are retained for three years after replacement. Support tickets are retained for\ntwo years after closure. These retention periods apply to the company's managed systems; employees\nmust not maintain separate personal archives. Access requests need approval from both the line manager\nand the data owner. If a request is denied, contact the approvers for clarification rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR",
+          "similarity": 0.6310831496442306,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7d73d8d-c1a7-4d39-b132-dd01c5d66ea7",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 5,
+          "page": 3,
+          "content": "rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR 1,200 per\nday. Taxi expenses above NPR 2,000 require prior manager approval. Finance reviews complete claims\nevery Friday, and approved claims are paid in the next payroll cycle. Missing receipts delay review.\nPersonal purchases and fines are not reimbursed. Foreign travel requires written approval before booking,\nbut this handbook does not specify international meal allowances. Ask Finance for that policy rather than\nassuming domestic limits apply abroad. All figures in this handbook are fictional demo data.",
+          "similarity": 0.6195205265426503,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "65538026-aefd-4805-a683-8b8b32c6a75e",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 3,
+          "page": 2,
+          "content": "commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The support mailbox is\nsupport@northstar.example. Creating a support ticket requires the customer to confirm the proposed\ndescription before it is submitted. A confirmation is not a guarantee of a refund or replacement. If the order\ndatabase cannot be reached, explain that the status is temporarily unavailable and ask the customer to\nretry. Never infer live status from these policy timings.",
+          "similarity": 0.5791871720310205,
+          "keyword_match": false
+        }
+      ],
+      "answer": {
+        "answer": "Up to five unused annual leave days may carry over into the following year [1].\n\nCarried-over leave days expire on March 31 [1].",
+        "citations": [
+          {
+            "source_id": 1,
+            "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+            "filename": "handbook.pdf",
+            "chunk_index": 0,
+            "page": 1,
+            "snippet": "DocuMind sample | Fictional policies | October 2026\n1\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nPeople and working hours\n1.1 Working week\nNorthstar Supply is a fictional company used for this DocuMind demonstration. The normal working week\nis Monday through Friday. Office hours are 09:00 to 17:00 Nepal Standard Time, with a one-hour lunch\nbreak. Employees work from the Kathmandu office on Tuesday and Thursday and may work remotely on\nthe other working days. A manager can approve a different arrangement f"
+          }
+        ],
+        "refused": false,
+        "retrieval_mode": "vector",
+        "model": "gemini-3.5-flash-lite",
+        "latency_ms": 1869,
+        "route": "rag",
+        "confirmation": null
+      },
+      "latency_ms": 1869,
+      "hit_at_5": true,
+      "error": null,
+      "supported": null,
+      "correct": null,
+      "review_notes": ""
+    },
+    {
+      "case": {
+        "id": "q04",
+        "question": "How many sick days are provided each year?",
+        "expected_answer": "10 days of paid sick leave.",
+        "section": "1.3 Sick leave and equipment",
+        "page": 1,
+        "evidence": [
+          "10 days of paid sick leave"
+        ],
+        "expected_refusal": false
+      },
+      "chunk_size": 300,
+      "retrieval_mode": "vector",
+      "chunks": [
+        {
+          "chunk_id": "e7dbd587-5b7c-469e-8f71-9f7a4e0a97a3",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 1,
+          "page": 1,
+          "content": "3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick leave does not carry over. The company supplies one laptop and\none headset to each full-time employee. Report lost equipment to the IT help desk immediately. Home\ninternet reimbursement is capped at NPR 1,500 per month and requires a receipt. Equipment must be\nreturned within three working days of the final employment date. These rules apply to employees, not\nindependent contractors.",
+          "similarity": 0.7689486971184226,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "f84ae30e-059f-4049-8f4c-ba31f1360e77",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 0,
+          "page": 1,
+          "content": "DocuMind sample | Fictional policies | October 2026\n1\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nPeople and working hours\n1.1 Working week\nNorthstar Supply is a fictional company used for this DocuMind demonstration. The normal working week\nis Monday through Friday. Office hours are 09:00 to 17:00 Nepal Standard Time, with a one-hour lunch\nbreak. Employees work from the Kathmandu office on Tuesday and Thursday and may work remotely on\nthe other working days. A manager can approve a different arrangement for a specific week. Any change\nmust be recorded in the team calendar so colleagues can plan coverage. Public holidays follow the annual\ncompany calendar rather than an individual employee's preferred schedule.\n1.2 Annual leave\nEvery full-time employee receives 20 days of paid annual leave per calendar year. Employees joining\nduring the year receive a prorated allowance. Request annual leave at least five working days before the\nfirst day away. The line manager approves requests after checking team coverage. Up to five unused\ndays may carry over into the following year, and those carried days expire on March 31. Leave is counted\nin working days; weekends and company public holidays do not reduce the allowance. An employee\nshould arrange a handover before leaving and add an out-of-office message naming the colleague\nproviding cover.\n1.3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick",
+          "similarity": 0.7340062856674194,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7d73d8d-c1a7-4d39-b132-dd01c5d66ea7",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 5,
+          "page": 3,
+          "content": "rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR 1,200 per\nday. Taxi expenses above NPR 2,000 require prior manager approval. Finance reviews complete claims\nevery Friday, and approved claims are paid in the next payroll cycle. Missing receipts delay review.\nPersonal purchases and fines are not reimbursed. Foreign travel requires written approval before booking,\nbut this handbook does not specify international meal allowances. Ask Finance for that policy rather than\nassuming domestic limits apply abroad. All figures in this handbook are fictional demo data.",
+          "similarity": 0.6237191782165075,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "91aa0567-9800-4f8a-a40b-9cbc33cfea73",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 4,
+          "page": 3,
+          "content": "DocuMind sample | Fictional policies | October 2026\n3\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nSecurity and expenses\n3.1 Data handling\nCustomer addresses, phone numbers, and payment references are confidential. Staff may view only the\nrecords required for their assigned work. Customer data must not be copied into personal email accounts\nor shared in public chat channels. Lock your screen whenever leaving your desk. Suspected data\nexposure must be reported to security@northstar.example within one hour of discovery. Include what\nhappened, when it was noticed, and which records may have been affected. Do not delete evidence while\ninvestigating. The security team coordinates containment and determines whether any external\nnotification is required. A colleague's access does not grant you permission to view the same records.\n3.2 Access and retention\nUse a unique company account and enable multi-factor authentication. Never share passwords or\nauthentication codes. IT removes departing employees' access by 18:00 on their final working day.\nInternal policy documents are retained for three years after replacement. Support tickets are retained for\ntwo years after closure. These retention periods apply to the company's managed systems; employees\nmust not maintain separate personal archives. Access requests need approval from both the line manager\nand the data owner. If a request is denied, contact the approvers for clarification rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR",
+          "similarity": 0.6227641105651855,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "195bd0da-b41c-40cd-a609-5730d0ad45d2",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 2,
+          "page": 2,
+          "content": "DocuMind sample | Fictional policies | October 2026\n2\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nOrders and customer support\n2.1 Shipping policy\nStandard domestic shipping takes three to five working days after dispatch. Express shipping takes one to\ntwo working days after dispatch and costs NPR 350 per order. Standard shipping is free for orders valued\nat NPR 3,000 or more; smaller orders have a NPR 150 shipping fee. Estimated shipping times exclude\npublic holidays. Customers receive a tracking reference after dispatch. A policy document explains\nshipping rules but cannot tell you the current status of a specific order. Current order status must be\nlooked up in the order database. A tracking reference does not prove that the parcel has been delivered.\n2.2 Returns and refunds\nUnused products may be returned within 14 calendar days of delivery. Customers must retain the original\npackaging and provide an order reference. Damaged products should be reported within 48 hours of\ndelivery, with a photograph of the product and packaging. Refunds are processed within seven working\ndays after the warehouse accepts a return. Refunds go to the original payment method. Custom-made\nproducts cannot be returned unless they are damaged or incorrectly supplied. The support team must not\npromise a refund before checking eligibility. Return transport for an approved damaged product is paid by\nthe company.\n2.3 Support commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The",
+          "similarity": 0.5913735032081604,
+          "keyword_match": false
+        }
+      ],
+      "answer": {
+        "answer": "Employees receive 10 days of paid sick leave each calendar year [1], [2].",
+        "citations": [
+          {
+            "source_id": 1,
+            "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+            "filename": "handbook.pdf",
+            "chunk_index": 1,
+            "page": 1,
+            "snippet": "3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick leave does not carry over. The company supplies one laptop and\none headset to each full-time employee. Report lost equipment to the IT help desk immediately. Home\ninternet reimbursement is capped at NPR 1,500 per month and re"
+          },
+          {
+            "source_id": 2,
+            "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+            "filename": "handbook.pdf",
+            "chunk_index": 0,
+            "page": 1,
+            "snippet": "DocuMind sample | Fictional policies | October 2026\n1\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nPeople and working hours\n1.1 Working week\nNorthstar Supply is a fictional company used for this DocuMind demonstration. The normal working week\nis Monday through Friday. Office hours are 09:00 to 17:00 Nepal Standard Time, with a one-hour lunch\nbreak. Employees work from the Kathmandu office on Tuesday and Thursday and may work remotely on\nthe other working days. A manager can approve a different arrangement f"
+          }
+        ],
+        "refused": false,
+        "retrieval_mode": "vector",
+        "model": "gemini-3.5-flash-lite",
+        "latency_ms": 1889,
+        "route": "rag",
+        "confirmation": null
+      },
+      "latency_ms": 1889,
+      "hit_at_5": true,
+      "error": null,
+      "supported": null,
+      "correct": null,
+      "review_notes": ""
+    },
+    {
+      "case": {
+        "id": "q05",
+        "question": "When is a medical certificate required?",
+        "expected_answer": "For absences longer than three consecutive working days.",
+        "section": "1.3 Sick leave and equipment",
+        "page": 1,
+        "evidence": [
+          "longer than three consecutive working days"
+        ],
+        "expected_refusal": false
+      },
+      "chunk_size": 300,
+      "retrieval_mode": "vector",
+      "chunks": [
+        {
+          "chunk_id": "e7dbd587-5b7c-469e-8f71-9f7a4e0a97a3",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 1,
+          "page": 1,
+          "content": "3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick leave does not carry over. The company supplies one laptop and\none headset to each full-time employee. Report lost equipment to the IT help desk immediately. Home\ninternet reimbursement is capped at NPR 1,500 per month and requires a receipt. Equipment must be\nreturned within three working days of the final employment date. These rules apply to employees, not\nindependent contractors.",
+          "similarity": 0.6748697169008601,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "f84ae30e-059f-4049-8f4c-ba31f1360e77",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 0,
+          "page": 1,
+          "content": "DocuMind sample | Fictional policies | October 2026\n1\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nPeople and working hours\n1.1 Working week\nNorthstar Supply is a fictional company used for this DocuMind demonstration. The normal working week\nis Monday through Friday. Office hours are 09:00 to 17:00 Nepal Standard Time, with a one-hour lunch\nbreak. Employees work from the Kathmandu office on Tuesday and Thursday and may work remotely on\nthe other working days. A manager can approve a different arrangement for a specific week. Any change\nmust be recorded in the team calendar so colleagues can plan coverage. Public holidays follow the annual\ncompany calendar rather than an individual employee's preferred schedule.\n1.2 Annual leave\nEvery full-time employee receives 20 days of paid annual leave per calendar year. Employees joining\nduring the year receive a prorated allowance. Request annual leave at least five working days before the\nfirst day away. The line manager approves requests after checking team coverage. Up to five unused\ndays may carry over into the following year, and those carried days expire on March 31. Leave is counted\nin working days; weekends and company public holidays do not reduce the allowance. An employee\nshould arrange a handover before leaving and add an out-of-office message naming the colleague\nproviding cover.\n1.3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick",
+          "similarity": 0.64437512423844,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "91aa0567-9800-4f8a-a40b-9cbc33cfea73",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 4,
+          "page": 3,
+          "content": "DocuMind sample | Fictional policies | October 2026\n3\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nSecurity and expenses\n3.1 Data handling\nCustomer addresses, phone numbers, and payment references are confidential. Staff may view only the\nrecords required for their assigned work. Customer data must not be copied into personal email accounts\nor shared in public chat channels. Lock your screen whenever leaving your desk. Suspected data\nexposure must be reported to security@northstar.example within one hour of discovery. Include what\nhappened, when it was noticed, and which records may have been affected. Do not delete evidence while\ninvestigating. The security team coordinates containment and determines whether any external\nnotification is required. A colleague's access does not grant you permission to view the same records.\n3.2 Access and retention\nUse a unique company account and enable multi-factor authentication. Never share passwords or\nauthentication codes. IT removes departing employees' access by 18:00 on their final working day.\nInternal policy documents are retained for three years after replacement. Support tickets are retained for\ntwo years after closure. These retention periods apply to the company's managed systems; employees\nmust not maintain separate personal archives. Access requests need approval from both the line manager\nand the data owner. If a request is denied, contact the approvers for clarification rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR",
+          "similarity": 0.5966277478115419,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7d73d8d-c1a7-4d39-b132-dd01c5d66ea7",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 5,
+          "page": 3,
+          "content": "rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR 1,200 per\nday. Taxi expenses above NPR 2,000 require prior manager approval. Finance reviews complete claims\nevery Friday, and approved claims are paid in the next payroll cycle. Missing receipts delay review.\nPersonal purchases and fines are not reimbursed. Foreign travel requires written approval before booking,\nbut this handbook does not specify international meal allowances. Ask Finance for that policy rather than\nassuming domestic limits apply abroad. All figures in this handbook are fictional demo data.",
+          "similarity": 0.5919295549392742,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "195bd0da-b41c-40cd-a609-5730d0ad45d2",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 2,
+          "page": 2,
+          "content": "DocuMind sample | Fictional policies | October 2026\n2\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nOrders and customer support\n2.1 Shipping policy\nStandard domestic shipping takes three to five working days after dispatch. Express shipping takes one to\ntwo working days after dispatch and costs NPR 350 per order. Standard shipping is free for orders valued\nat NPR 3,000 or more; smaller orders have a NPR 150 shipping fee. Estimated shipping times exclude\npublic holidays. Customers receive a tracking reference after dispatch. A policy document explains\nshipping rules but cannot tell you the current status of a specific order. Current order status must be\nlooked up in the order database. A tracking reference does not prove that the parcel has been delivered.\n2.2 Returns and refunds\nUnused products may be returned within 14 calendar days of delivery. Customers must retain the original\npackaging and provide an order reference. Damaged products should be reported within 48 hours of\ndelivery, with a photograph of the product and packaging. Refunds are processed within seven working\ndays after the warehouse accepts a return. Refunds go to the original payment method. Custom-made\nproducts cannot be returned unless they are damaged or incorrectly supplied. The support team must not\npromise a refund before checking eligibility. Return transport for an approved damaged product is paid by\nthe company.\n2.3 Support commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The",
+          "similarity": 0.5778237925662881,
+          "keyword_match": false
+        }
+      ],
+      "answer": {
+        "answer": "A medical certificate is required for sick leave absences that last longer than three consecutive working days [1, 2].",
+        "citations": [
+          {
+            "source_id": 1,
+            "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+            "filename": "handbook.pdf",
+            "chunk_index": 1,
+            "page": 1,
+            "snippet": "3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick leave does not carry over. The company supplies one laptop and\none headset to each full-time employee. Report lost equipment to the IT help desk immediately. Home\ninternet reimbursement is capped at NPR 1,500 per month and re"
+          },
+          {
+            "source_id": 2,
+            "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+            "filename": "handbook.pdf",
+            "chunk_index": 0,
+            "page": 1,
+            "snippet": "DocuMind sample | Fictional policies | October 2026\n1\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nPeople and working hours\n1.1 Working week\nNorthstar Supply is a fictional company used for this DocuMind demonstration. The normal working week\nis Monday through Friday. Office hours are 09:00 to 17:00 Nepal Standard Time, with a one-hour lunch\nbreak. Employees work from the Kathmandu office on Tuesday and Thursday and may work remotely on\nthe other working days. A manager can approve a different arrangement f"
+          }
+        ],
+        "refused": false,
+        "retrieval_mode": "vector",
+        "model": "gemini-3.5-flash-lite",
+        "latency_ms": 1653,
+        "route": "rag",
+        "confirmation": null
+      },
+      "latency_ms": 1653,
+      "hit_at_5": true,
+      "error": null,
+      "supported": null,
+      "correct": null,
+      "review_notes": ""
+    },
+    {
+      "case": {
+        "id": "q06",
+        "question": "What is the monthly home internet reimbursement limit?",
+        "expected_answer": "NPR 1,500 per month, with a receipt.",
+        "section": "1.3 Sick leave and equipment",
+        "page": 1,
+        "evidence": [
+          "1,500 per month"
+        ],
+        "expected_refusal": false
+      },
+      "chunk_size": 300,
+      "retrieval_mode": "vector",
+      "chunks": [
+        {
+          "chunk_id": "e7dbd587-5b7c-469e-8f71-9f7a4e0a97a3",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 1,
+          "page": 1,
+          "content": "3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick leave does not carry over. The company supplies one laptop and\none headset to each full-time employee. Report lost equipment to the IT help desk immediately. Home\ninternet reimbursement is capped at NPR 1,500 per month and requires a receipt. Equipment must be\nreturned within three working days of the final employment date. These rules apply to employees, not\nindependent contractors.",
+          "similarity": 0.6843838503589541,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7d73d8d-c1a7-4d39-b132-dd01c5d66ea7",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 5,
+          "page": 3,
+          "content": "rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR 1,200 per\nday. Taxi expenses above NPR 2,000 require prior manager approval. Finance reviews complete claims\nevery Friday, and approved claims are paid in the next payroll cycle. Missing receipts delay review.\nPersonal purchases and fines are not reimbursed. Foreign travel requires written approval before booking,\nbut this handbook does not specify international meal allowances. Ask Finance for that policy rather than\nassuming domestic limits apply abroad. All figures in this handbook are fictional demo data.",
+          "similarity": 0.6550539536758105,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "91aa0567-9800-4f8a-a40b-9cbc33cfea73",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 4,
+          "page": 3,
+          "content": "DocuMind sample | Fictional policies | October 2026\n3\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nSecurity and expenses\n3.1 Data handling\nCustomer addresses, phone numbers, and payment references are confidential. Staff may view only the\nrecords required for their assigned work. Customer data must not be copied into personal email accounts\nor shared in public chat channels. Lock your screen whenever leaving your desk. Suspected data\nexposure must be reported to security@northstar.example within one hour of discovery. Include what\nhappened, when it was noticed, and which records may have been affected. Do not delete evidence while\ninvestigating. The security team coordinates containment and determines whether any external\nnotification is required. A colleague's access does not grant you permission to view the same records.\n3.2 Access and retention\nUse a unique company account and enable multi-factor authentication. Never share passwords or\nauthentication codes. IT removes departing employees' access by 18:00 on their final working day.\nInternal policy documents are retained for three years after replacement. Support tickets are retained for\ntwo years after closure. These retention periods apply to the company's managed systems; employees\nmust not maintain separate personal archives. Access requests need approval from both the line manager\nand the data owner. If a request is denied, contact the approvers for clarification rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR",
+          "similarity": 0.6284040399910227,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "f84ae30e-059f-4049-8f4c-ba31f1360e77",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 0,
+          "page": 1,
+          "content": "DocuMind sample | Fictional policies | October 2026\n1\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nPeople and working hours\n1.1 Working week\nNorthstar Supply is a fictional company used for this DocuMind demonstration. The normal working week\nis Monday through Friday. Office hours are 09:00 to 17:00 Nepal Standard Time, with a one-hour lunch\nbreak. Employees work from the Kathmandu office on Tuesday and Thursday and may work remotely on\nthe other working days. A manager can approve a different arrangement for a specific week. Any change\nmust be recorded in the team calendar so colleagues can plan coverage. Public holidays follow the annual\ncompany calendar rather than an individual employee's preferred schedule.\n1.2 Annual leave\nEvery full-time employee receives 20 days of paid annual leave per calendar year. Employees joining\nduring the year receive a prorated allowance. Request annual leave at least five working days before the\nfirst day away. The line manager approves requests after checking team coverage. Up to five unused\ndays may carry over into the following year, and those carried days expire on March 31. Leave is counted\nin working days; weekends and company public holidays do not reduce the allowance. An employee\nshould arrange a handover before leaving and add an out-of-office message naming the colleague\nproviding cover.\n1.3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick",
+          "similarity": 0.6058433236433068,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "195bd0da-b41c-40cd-a609-5730d0ad45d2",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 2,
+          "page": 2,
+          "content": "DocuMind sample | Fictional policies | October 2026\n2\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nOrders and customer support\n2.1 Shipping policy\nStandard domestic shipping takes three to five working days after dispatch. Express shipping takes one to\ntwo working days after dispatch and costs NPR 350 per order. Standard shipping is free for orders valued\nat NPR 3,000 or more; smaller orders have a NPR 150 shipping fee. Estimated shipping times exclude\npublic holidays. Customers receive a tracking reference after dispatch. A policy document explains\nshipping rules but cannot tell you the current status of a specific order. Current order status must be\nlooked up in the order database. A tracking reference does not prove that the parcel has been delivered.\n2.2 Returns and refunds\nUnused products may be returned within 14 calendar days of delivery. Customers must retain the original\npackaging and provide an order reference. Damaged products should be reported within 48 hours of\ndelivery, with a photograph of the product and packaging. Refunds are processed within seven working\ndays after the warehouse accepts a return. Refunds go to the original payment method. Custom-made\nproducts cannot be returned unless they are damaged or incorrectly supplied. The support team must not\npromise a refund before checking eligibility. Return transport for an approved damaged product is paid by\nthe company.\n2.3 Support commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The",
+          "similarity": 0.5807290846326677,
+          "keyword_match": false
+        }
+      ],
+      "answer": {
+        "answer": "The monthly home internet reimbursement is capped at NPR 1,500 and requires a receipt [1].",
+        "citations": [
+          {
+            "source_id": 1,
+            "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+            "filename": "handbook.pdf",
+            "chunk_index": 1,
+            "page": 1,
+            "snippet": "3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick leave does not carry over. The company supplies one laptop and\none headset to each full-time employee. Report lost equipment to the IT help desk immediately. Home\ninternet reimbursement is capped at NPR 1,500 per month and re"
+          }
+        ],
+        "refused": false,
+        "retrieval_mode": "vector",
+        "model": "gemini-3.5-flash-lite",
+        "latency_ms": 2031,
+        "route": "rag",
+        "confirmation": null
+      },
+      "latency_ms": 2031,
+      "hit_at_5": true,
+      "error": null,
+      "supported": null,
+      "correct": null,
+      "review_notes": ""
+    },
+    {
+      "case": {
+        "id": "q07",
+        "question": "How long do standard and express shipping take?",
+        "expected_answer": "Standard: three to five working days. Express: one to two working days. Both after dispatch.",
+        "section": "2.1 Shipping policy",
+        "page": 2,
+        "evidence": [
+          "three to five working days",
+          "one to two working days"
+        ],
+        "expected_refusal": false
+      },
+      "chunk_size": 300,
+      "retrieval_mode": "vector",
+      "chunks": [
+        {
+          "chunk_id": "195bd0da-b41c-40cd-a609-5730d0ad45d2",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 2,
+          "page": 2,
+          "content": "DocuMind sample | Fictional policies | October 2026\n2\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nOrders and customer support\n2.1 Shipping policy\nStandard domestic shipping takes three to five working days after dispatch. Express shipping takes one to\ntwo working days after dispatch and costs NPR 350 per order. Standard shipping is free for orders valued\nat NPR 3,000 or more; smaller orders have a NPR 150 shipping fee. Estimated shipping times exclude\npublic holidays. Customers receive a tracking reference after dispatch. A policy document explains\nshipping rules but cannot tell you the current status of a specific order. Current order status must be\nlooked up in the order database. A tracking reference does not prove that the parcel has been delivered.\n2.2 Returns and refunds\nUnused products may be returned within 14 calendar days of delivery. Customers must retain the original\npackaging and provide an order reference. Damaged products should be reported within 48 hours of\ndelivery, with a photograph of the product and packaging. Refunds are processed within seven working\ndays after the warehouse accepts a return. Refunds go to the original payment method. Custom-made\nproducts cannot be returned unless they are damaged or incorrectly supplied. The support team must not\npromise a refund before checking eligibility. Return transport for an approved damaged product is paid by\nthe company.\n2.3 Support commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The",
+          "similarity": 0.7061583995819092,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "65538026-aefd-4805-a683-8b8b32c6a75e",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 3,
+          "page": 2,
+          "content": "commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The support mailbox is\nsupport@northstar.example. Creating a support ticket requires the customer to confirm the proposed\ndescription before it is submitted. A confirmation is not a guarantee of a refund or replacement. If the order\ndatabase cannot be reached, explain that the status is temporarily unavailable and ask the customer to\nretry. Never infer live status from these policy timings.",
+          "similarity": 0.6335263252258301,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "f84ae30e-059f-4049-8f4c-ba31f1360e77",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 0,
+          "page": 1,
+          "content": "DocuMind sample | Fictional policies | October 2026\n1\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nPeople and working hours\n1.1 Working week\nNorthstar Supply is a fictional company used for this DocuMind demonstration. The normal working week\nis Monday through Friday. Office hours are 09:00 to 17:00 Nepal Standard Time, with a one-hour lunch\nbreak. Employees work from the Kathmandu office on Tuesday and Thursday and may work remotely on\nthe other working days. A manager can approve a different arrangement for a specific week. Any change\nmust be recorded in the team calendar so colleagues can plan coverage. Public holidays follow the annual\ncompany calendar rather than an individual employee's preferred schedule.\n1.2 Annual leave\nEvery full-time employee receives 20 days of paid annual leave per calendar year. Employees joining\nduring the year receive a prorated allowance. Request annual leave at least five working days before the\nfirst day away. The line manager approves requests after checking team coverage. Up to five unused\ndays may carry over into the following year, and those carried days expire on March 31. Leave is counted\nin working days; weekends and company public holidays do not reduce the allowance. An employee\nshould arrange a handover before leaving and add an out-of-office message naming the colleague\nproviding cover.\n1.3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick",
+          "similarity": 0.5862594842910767,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "91aa0567-9800-4f8a-a40b-9cbc33cfea73",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 4,
+          "page": 3,
+          "content": "DocuMind sample | Fictional policies | October 2026\n3\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nSecurity and expenses\n3.1 Data handling\nCustomer addresses, phone numbers, and payment references are confidential. Staff may view only the\nrecords required for their assigned work. Customer data must not be copied into personal email accounts\nor shared in public chat channels. Lock your screen whenever leaving your desk. Suspected data\nexposure must be reported to security@northstar.example within one hour of discovery. Include what\nhappened, when it was noticed, and which records may have been affected. Do not delete evidence while\ninvestigating. The security team coordinates containment and determines whether any external\nnotification is required. A colleague's access does not grant you permission to view the same records.\n3.2 Access and retention\nUse a unique company account and enable multi-factor authentication. Never share passwords or\nauthentication codes. IT removes departing employees' access by 18:00 on their final working day.\nInternal policy documents are retained for three years after replacement. Support tickets are retained for\ntwo years after closure. These retention periods apply to the company's managed systems; employees\nmust not maintain separate personal archives. Access requests need approval from both the line manager\nand the data owner. If a request is denied, contact the approvers for clarification rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR",
+          "similarity": 0.5853922367095947,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7d73d8d-c1a7-4d39-b132-dd01c5d66ea7",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 5,
+          "page": 3,
+          "content": "rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR 1,200 per\nday. Taxi expenses above NPR 2,000 require prior manager approval. Finance reviews complete claims\nevery Friday, and approved claims are paid in the next payroll cycle. Missing receipts delay review.\nPersonal purchases and fines are not reimbursed. Foreign travel requires written approval before booking,\nbut this handbook does not specify international meal allowances. Ask Finance for that policy rather than\nassuming domestic limits apply abroad. All figures in this handbook are fictional demo data.",
+          "similarity": 0.5623098872715312,
+          "keyword_match": false
+        }
+      ],
+      "answer": {
+        "answer": "Standard domestic shipping takes three to five working days after dispatch [1].\n\nExpress shipping takes one to two working days after dispatch [1].",
+        "citations": [
+          {
+            "source_id": 1,
+            "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+            "filename": "handbook.pdf",
+            "chunk_index": 2,
+            "page": 2,
+            "snippet": "DocuMind sample | Fictional policies | October 2026\n2\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nOrders and customer support\n2.1 Shipping policy\nStandard domestic shipping takes three to five working days after dispatch. Express shipping takes one to\ntwo working days after dispatch and costs NPR 350 per order. Standard shipping is free for orders valued\nat NPR 3,000 or more; smaller orders have a NPR 150 shipping fee. Estimated shipping times exclude\npublic holidays. Customers receive a tracking reference"
+          }
+        ],
+        "refused": false,
+        "retrieval_mode": "vector",
+        "model": "gemini-3.5-flash-lite",
+        "latency_ms": 1890,
+        "route": "rag",
+        "confirmation": null
+      },
+      "latency_ms": 1890,
+      "hit_at_5": true,
+      "error": null,
+      "supported": null,
+      "correct": null,
+      "review_notes": ""
+    },
+    {
+      "case": {
+        "id": "q08",
+        "question": "When is standard shipping free, and what is charged below the threshold?",
+        "expected_answer": "Free for orders of NPR 3,000 or more; NPR 150 for smaller orders.",
+        "section": "2.1 Shipping policy",
+        "page": 2,
+        "evidence": [
+          "3,000 or more",
+          "150 shipping fee"
+        ],
+        "expected_refusal": false
+      },
+      "chunk_size": 300,
+      "retrieval_mode": "vector",
+      "chunks": [
+        {
+          "chunk_id": "195bd0da-b41c-40cd-a609-5730d0ad45d2",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 2,
+          "page": 2,
+          "content": "DocuMind sample | Fictional policies | October 2026\n2\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nOrders and customer support\n2.1 Shipping policy\nStandard domestic shipping takes three to five working days after dispatch. Express shipping takes one to\ntwo working days after dispatch and costs NPR 350 per order. Standard shipping is free for orders valued\nat NPR 3,000 or more; smaller orders have a NPR 150 shipping fee. Estimated shipping times exclude\npublic holidays. Customers receive a tracking reference after dispatch. A policy document explains\nshipping rules but cannot tell you the current status of a specific order. Current order status must be\nlooked up in the order database. A tracking reference does not prove that the parcel has been delivered.\n2.2 Returns and refunds\nUnused products may be returned within 14 calendar days of delivery. Customers must retain the original\npackaging and provide an order reference. Damaged products should be reported within 48 hours of\ndelivery, with a photograph of the product and packaging. Refunds are processed within seven working\ndays after the warehouse accepts a return. Refunds go to the original payment method. Custom-made\nproducts cannot be returned unless they are damaged or incorrectly supplied. The support team must not\npromise a refund before checking eligibility. Return transport for an approved damaged product is paid by\nthe company.\n2.3 Support commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The",
+          "similarity": 0.6746386885643005,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "65538026-aefd-4805-a683-8b8b32c6a75e",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 3,
+          "page": 2,
+          "content": "commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The support mailbox is\nsupport@northstar.example. Creating a support ticket requires the customer to confirm the proposed\ndescription before it is submitted. A confirmation is not a guarantee of a refund or replacement. If the order\ndatabase cannot be reached, explain that the status is temporarily unavailable and ask the customer to\nretry. Never infer live status from these policy timings.",
+          "similarity": 0.6035655736923218,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "f84ae30e-059f-4049-8f4c-ba31f1360e77",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 0,
+          "page": 1,
+          "content": "DocuMind sample | Fictional policies | October 2026\n1\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nPeople and working hours\n1.1 Working week\nNorthstar Supply is a fictional company used for this DocuMind demonstration. The normal working week\nis Monday through Friday. Office hours are 09:00 to 17:00 Nepal Standard Time, with a one-hour lunch\nbreak. Employees work from the Kathmandu office on Tuesday and Thursday and may work remotely on\nthe other working days. A manager can approve a different arrangement for a specific week. Any change\nmust be recorded in the team calendar so colleagues can plan coverage. Public holidays follow the annual\ncompany calendar rather than an individual employee's preferred schedule.\n1.2 Annual leave\nEvery full-time employee receives 20 days of paid annual leave per calendar year. Employees joining\nduring the year receive a prorated allowance. Request annual leave at least five working days before the\nfirst day away. The line manager approves requests after checking team coverage. Up to five unused\ndays may carry over into the following year, and those carried days expire on March 31. Leave is counted\nin working days; weekends and company public holidays do not reduce the allowance. An employee\nshould arrange a handover before leaving and add an out-of-office message naming the colleague\nproviding cover.\n1.3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick",
+          "similarity": 0.5662031769752502,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7dbd587-5b7c-469e-8f71-9f7a4e0a97a3",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 1,
+          "page": 1,
+          "content": "3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick leave does not carry over. The company supplies one laptop and\none headset to each full-time employee. Report lost equipment to the IT help desk immediately. Home\ninternet reimbursement is capped at NPR 1,500 per month and requires a receipt. Equipment must be\nreturned within three working days of the final employment date. These rules apply to employees, not\nindependent contractors.",
+          "similarity": 0.5626623202163675,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7d73d8d-c1a7-4d39-b132-dd01c5d66ea7",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 5,
+          "page": 3,
+          "content": "rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR 1,200 per\nday. Taxi expenses above NPR 2,000 require prior manager approval. Finance reviews complete claims\nevery Friday, and approved claims are paid in the next payroll cycle. Missing receipts delay review.\nPersonal purchases and fines are not reimbursed. Foreign travel requires written approval before booking,\nbut this handbook does not specify international meal allowances. Ask Finance for that policy rather than\nassuming domestic limits apply abroad. All figures in this handbook are fictional demo data.",
+          "similarity": 0.5612173938025607,
+          "keyword_match": false
+        }
+      ],
+      "answer": {
+        "answer": "Standard shipping is free for orders valued at NPR 3,000 or more [1]. \n\nOrders below this threshold are charged a shipping fee of NPR 150 [1].",
+        "citations": [
+          {
+            "source_id": 1,
+            "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+            "filename": "handbook.pdf",
+            "chunk_index": 2,
+            "page": 2,
+            "snippet": "DocuMind sample | Fictional policies | October 2026\n2\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nOrders and customer support\n2.1 Shipping policy\nStandard domestic shipping takes three to five working days after dispatch. Express shipping takes one to\ntwo working days after dispatch and costs NPR 350 per order. Standard shipping is free for orders valued\nat NPR 3,000 or more; smaller orders have a NPR 150 shipping fee. Estimated shipping times exclude\npublic holidays. Customers receive a tracking reference"
+          }
+        ],
+        "refused": false,
+        "retrieval_mode": "vector",
+        "model": "gemini-3.5-flash-lite",
+        "latency_ms": 1582,
+        "route": "rag",
+        "confirmation": null
+      },
+      "latency_ms": 1582,
+      "hit_at_5": true,
+      "error": null,
+      "supported": null,
+      "correct": null,
+      "review_notes": ""
+    },
+    {
+      "case": {
+        "id": "q09",
+        "question": "How long do customers have to return an unused product?",
+        "expected_answer": "14 calendar days from delivery; retain original packaging and provide an order reference.",
+        "section": "2.2 Returns and refunds",
+        "page": 2,
+        "evidence": [
+          "14 calendar days of delivery"
+        ],
+        "expected_refusal": false
+      },
+      "chunk_size": 300,
+      "retrieval_mode": "vector",
+      "chunks": [
+        {
+          "chunk_id": "195bd0da-b41c-40cd-a609-5730d0ad45d2",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 2,
+          "page": 2,
+          "content": "DocuMind sample | Fictional policies | October 2026\n2\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nOrders and customer support\n2.1 Shipping policy\nStandard domestic shipping takes three to five working days after dispatch. Express shipping takes one to\ntwo working days after dispatch and costs NPR 350 per order. Standard shipping is free for orders valued\nat NPR 3,000 or more; smaller orders have a NPR 150 shipping fee. Estimated shipping times exclude\npublic holidays. Customers receive a tracking reference after dispatch. A policy document explains\nshipping rules but cannot tell you the current status of a specific order. Current order status must be\nlooked up in the order database. A tracking reference does not prove that the parcel has been delivered.\n2.2 Returns and refunds\nUnused products may be returned within 14 calendar days of delivery. Customers must retain the original\npackaging and provide an order reference. Damaged products should be reported within 48 hours of\ndelivery, with a photograph of the product and packaging. Refunds are processed within seven working\ndays after the warehouse accepts a return. Refunds go to the original payment method. Custom-made\nproducts cannot be returned unless they are damaged or incorrectly supplied. The support team must not\npromise a refund before checking eligibility. Return transport for an approved damaged product is paid by\nthe company.\n2.3 Support commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The",
+          "similarity": 0.6646562814712524,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "65538026-aefd-4805-a683-8b8b32c6a75e",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 3,
+          "page": 2,
+          "content": "commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The support mailbox is\nsupport@northstar.example. Creating a support ticket requires the customer to confirm the proposed\ndescription before it is submitted. A confirmation is not a guarantee of a refund or replacement. If the order\ndatabase cannot be reached, explain that the status is temporarily unavailable and ask the customer to\nretry. Never infer live status from these policy timings.",
+          "similarity": 0.632491946220398,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7dbd587-5b7c-469e-8f71-9f7a4e0a97a3",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 1,
+          "page": 1,
+          "content": "3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick leave does not carry over. The company supplies one laptop and\none headset to each full-time employee. Report lost equipment to the IT help desk immediately. Home\ninternet reimbursement is capped at NPR 1,500 per month and requires a receipt. Equipment must be\nreturned within three working days of the final employment date. These rules apply to employees, not\nindependent contractors.",
+          "similarity": 0.6089829984004201,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "91aa0567-9800-4f8a-a40b-9cbc33cfea73",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 4,
+          "page": 3,
+          "content": "DocuMind sample | Fictional policies | October 2026\n3\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nSecurity and expenses\n3.1 Data handling\nCustomer addresses, phone numbers, and payment references are confidential. Staff may view only the\nrecords required for their assigned work. Customer data must not be copied into personal email accounts\nor shared in public chat channels. Lock your screen whenever leaving your desk. Suspected data\nexposure must be reported to security@northstar.example within one hour of discovery. Include what\nhappened, when it was noticed, and which records may have been affected. Do not delete evidence while\ninvestigating. The security team coordinates containment and determines whether any external\nnotification is required. A colleague's access does not grant you permission to view the same records.\n3.2 Access and retention\nUse a unique company account and enable multi-factor authentication. Never share passwords or\nauthentication codes. IT removes departing employees' access by 18:00 on their final working day.\nInternal policy documents are retained for three years after replacement. Support tickets are retained for\ntwo years after closure. These retention periods apply to the company's managed systems; employees\nmust not maintain separate personal archives. Access requests need approval from both the line manager\nand the data owner. If a request is denied, contact the approvers for clarification rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR",
+          "similarity": 0.6023313999176025,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "f84ae30e-059f-4049-8f4c-ba31f1360e77",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 0,
+          "page": 1,
+          "content": "DocuMind sample | Fictional policies | October 2026\n1\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nPeople and working hours\n1.1 Working week\nNorthstar Supply is a fictional company used for this DocuMind demonstration. The normal working week\nis Monday through Friday. Office hours are 09:00 to 17:00 Nepal Standard Time, with a one-hour lunch\nbreak. Employees work from the Kathmandu office on Tuesday and Thursday and may work remotely on\nthe other working days. A manager can approve a different arrangement for a specific week. Any change\nmust be recorded in the team calendar so colleagues can plan coverage. Public holidays follow the annual\ncompany calendar rather than an individual employee's preferred schedule.\n1.2 Annual leave\nEvery full-time employee receives 20 days of paid annual leave per calendar year. Employees joining\nduring the year receive a prorated allowance. Request annual leave at least five working days before the\nfirst day away. The line manager approves requests after checking team coverage. Up to five unused\ndays may carry over into the following year, and those carried days expire on March 31. Leave is counted\nin working days; weekends and company public holidays do not reduce the allowance. An employee\nshould arrange a handover before leaving and add an out-of-office message naming the colleague\nproviding cover.\n1.3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick",
+          "similarity": 0.6000247001647949,
+          "keyword_match": false
+        }
+      ],
+      "answer": {
+        "answer": "Customers have 14 calendar days from delivery to return unused products [1].",
+        "citations": [
+          {
+            "source_id": 1,
+            "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+            "filename": "handbook.pdf",
+            "chunk_index": 2,
+            "page": 2,
+            "snippet": "DocuMind sample | Fictional policies | October 2026\n2\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nOrders and customer support\n2.1 Shipping policy\nStandard domestic shipping takes three to five working days after dispatch. Express shipping takes one to\ntwo working days after dispatch and costs NPR 350 per order. Standard shipping is free for orders valued\nat NPR 3,000 or more; smaller orders have a NPR 150 shipping fee. Estimated shipping times exclude\npublic holidays. Customers receive a tracking reference"
+          }
+        ],
+        "refused": false,
+        "retrieval_mode": "vector",
+        "model": "gemini-3.5-flash-lite",
+        "latency_ms": 3090,
+        "route": "rag",
+        "confirmation": null
+      },
+      "latency_ms": 3090,
+      "hit_at_5": true,
+      "error": null,
+      "supported": null,
+      "correct": null,
+      "review_notes": ""
+    },
+    {
+      "case": {
+        "id": "q10",
+        "question": "How quickly should damaged products be reported?",
+        "expected_answer": "Within 48 hours of delivery, with a photograph of the product and packaging.",
+        "section": "2.2 Returns and refunds",
+        "page": 2,
+        "evidence": [
+          "within 48 hours of delivery"
+        ],
+        "expected_refusal": false
+      },
+      "chunk_size": 300,
+      "retrieval_mode": "vector",
+      "chunks": [
+        {
+          "chunk_id": "65538026-aefd-4805-a683-8b8b32c6a75e",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 3,
+          "page": 2,
+          "content": "commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The support mailbox is\nsupport@northstar.example. Creating a support ticket requires the customer to confirm the proposed\ndescription before it is submitted. A confirmation is not a guarantee of a refund or replacement. If the order\ndatabase cannot be reached, explain that the status is temporarily unavailable and ask the customer to\nretry. Never infer live status from these policy timings.",
+          "similarity": 0.6656040549278259,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "195bd0da-b41c-40cd-a609-5730d0ad45d2",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 2,
+          "page": 2,
+          "content": "DocuMind sample | Fictional policies | October 2026\n2\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nOrders and customer support\n2.1 Shipping policy\nStandard domestic shipping takes three to five working days after dispatch. Express shipping takes one to\ntwo working days after dispatch and costs NPR 350 per order. Standard shipping is free for orders valued\nat NPR 3,000 or more; smaller orders have a NPR 150 shipping fee. Estimated shipping times exclude\npublic holidays. Customers receive a tracking reference after dispatch. A policy document explains\nshipping rules but cannot tell you the current status of a specific order. Current order status must be\nlooked up in the order database. A tracking reference does not prove that the parcel has been delivered.\n2.2 Returns and refunds\nUnused products may be returned within 14 calendar days of delivery. Customers must retain the original\npackaging and provide an order reference. Damaged products should be reported within 48 hours of\ndelivery, with a photograph of the product and packaging. Refunds are processed within seven working\ndays after the warehouse accepts a return. Refunds go to the original payment method. Custom-made\nproducts cannot be returned unless they are damaged or incorrectly supplied. The support team must not\npromise a refund before checking eligibility. Return transport for an approved damaged product is paid by\nthe company.\n2.3 Support commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The",
+          "similarity": 0.6584396958351135,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "91aa0567-9800-4f8a-a40b-9cbc33cfea73",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 4,
+          "page": 3,
+          "content": "DocuMind sample | Fictional policies | October 2026\n3\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nSecurity and expenses\n3.1 Data handling\nCustomer addresses, phone numbers, and payment references are confidential. Staff may view only the\nrecords required for their assigned work. Customer data must not be copied into personal email accounts\nor shared in public chat channels. Lock your screen whenever leaving your desk. Suspected data\nexposure must be reported to security@northstar.example within one hour of discovery. Include what\nhappened, when it was noticed, and which records may have been affected. Do not delete evidence while\ninvestigating. The security team coordinates containment and determines whether any external\nnotification is required. A colleague's access does not grant you permission to view the same records.\n3.2 Access and retention\nUse a unique company account and enable multi-factor authentication. Never share passwords or\nauthentication codes. IT removes departing employees' access by 18:00 on their final working day.\nInternal policy documents are retained for three years after replacement. Support tickets are retained for\ntwo years after closure. These retention periods apply to the company's managed systems; employees\nmust not maintain separate personal archives. Access requests need approval from both the line manager\nand the data owner. If a request is denied, contact the approvers for clarification rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR",
+          "similarity": 0.6191046237945557,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7d73d8d-c1a7-4d39-b132-dd01c5d66ea7",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 5,
+          "page": 3,
+          "content": "rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR 1,200 per\nday. Taxi expenses above NPR 2,000 require prior manager approval. Finance reviews complete claims\nevery Friday, and approved claims are paid in the next payroll cycle. Missing receipts delay review.\nPersonal purchases and fines are not reimbursed. Foreign travel requires written approval before booking,\nbut this handbook does not specify international meal allowances. Ask Finance for that policy rather than\nassuming domestic limits apply abroad. All figures in this handbook are fictional demo data.",
+          "similarity": 0.5885488636166545,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7dbd587-5b7c-469e-8f71-9f7a4e0a97a3",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 1,
+          "page": 1,
+          "content": "3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick leave does not carry over. The company supplies one laptop and\none headset to each full-time employee. Report lost equipment to the IT help desk immediately. Home\ninternet reimbursement is capped at NPR 1,500 per month and requires a receipt. Equipment must be\nreturned within three working days of the final employment date. These rules apply to employees, not\nindependent contractors.",
+          "similarity": 0.5876847084666704,
+          "keyword_match": false
+        }
+      ],
+      "answer": {
+        "answer": "Damaged products should be reported within 48 hours of delivery [2].",
+        "citations": [
+          {
+            "source_id": 2,
+            "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+            "filename": "handbook.pdf",
+            "chunk_index": 2,
+            "page": 2,
+            "snippet": "DocuMind sample | Fictional policies | October 2026\n2\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nOrders and customer support\n2.1 Shipping policy\nStandard domestic shipping takes three to five working days after dispatch. Express shipping takes one to\ntwo working days after dispatch and costs NPR 350 per order. Standard shipping is free for orders valued\nat NPR 3,000 or more; smaller orders have a NPR 150 shipping fee. Estimated shipping times exclude\npublic holidays. Customers receive a tracking reference"
+          }
+        ],
+        "refused": false,
+        "retrieval_mode": "vector",
+        "model": "gemini-3.5-flash-lite",
+        "latency_ms": 1872,
+        "route": "rag",
+        "confirmation": null
+      },
+      "latency_ms": 1872,
+      "hit_at_5": true,
+      "error": null,
+      "supported": null,
+      "correct": null,
+      "review_notes": ""
+    },
+    {
+      "case": {
+        "id": "q11",
+        "question": "How long do refunds take after the warehouse accepts a return?",
+        "expected_answer": "Within seven working days; refunds use the original payment method.",
+        "section": "2.2 Returns and refunds",
+        "page": 2,
+        "evidence": [
+          "seven working days after the warehouse accepts"
+        ],
+        "expected_refusal": false
+      },
+      "chunk_size": 300,
+      "retrieval_mode": "vector",
+      "chunks": [
+        {
+          "chunk_id": "195bd0da-b41c-40cd-a609-5730d0ad45d2",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 2,
+          "page": 2,
+          "content": "DocuMind sample | Fictional policies | October 2026\n2\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nOrders and customer support\n2.1 Shipping policy\nStandard domestic shipping takes three to five working days after dispatch. Express shipping takes one to\ntwo working days after dispatch and costs NPR 350 per order. Standard shipping is free for orders valued\nat NPR 3,000 or more; smaller orders have a NPR 150 shipping fee. Estimated shipping times exclude\npublic holidays. Customers receive a tracking reference after dispatch. A policy document explains\nshipping rules but cannot tell you the current status of a specific order. Current order status must be\nlooked up in the order database. A tracking reference does not prove that the parcel has been delivered.\n2.2 Returns and refunds\nUnused products may be returned within 14 calendar days of delivery. Customers must retain the original\npackaging and provide an order reference. Damaged products should be reported within 48 hours of\ndelivery, with a photograph of the product and packaging. Refunds are processed within seven working\ndays after the warehouse accepts a return. Refunds go to the original payment method. Custom-made\nproducts cannot be returned unless they are damaged or incorrectly supplied. The support team must not\npromise a refund before checking eligibility. Return transport for an approved damaged product is paid by\nthe company.\n2.3 Support commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The",
+          "similarity": 0.6760393381118774,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "65538026-aefd-4805-a683-8b8b32c6a75e",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 3,
+          "page": 2,
+          "content": "commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The support mailbox is\nsupport@northstar.example. Creating a support ticket requires the customer to confirm the proposed\ndescription before it is submitted. A confirmation is not a guarantee of a refund or replacement. If the order\ndatabase cannot be reached, explain that the status is temporarily unavailable and ask the customer to\nretry. Never infer live status from these policy timings.",
+          "similarity": 0.6131114959716797,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7d73d8d-c1a7-4d39-b132-dd01c5d66ea7",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 5,
+          "page": 3,
+          "content": "rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR 1,200 per\nday. Taxi expenses above NPR 2,000 require prior manager approval. Finance reviews complete claims\nevery Friday, and approved claims are paid in the next payroll cycle. Missing receipts delay review.\nPersonal purchases and fines are not reimbursed. Foreign travel requires written approval before booking,\nbut this handbook does not specify international meal allowances. Ask Finance for that policy rather than\nassuming domestic limits apply abroad. All figures in this handbook are fictional demo data.",
+          "similarity": 0.589343989530565,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "f84ae30e-059f-4049-8f4c-ba31f1360e77",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 0,
+          "page": 1,
+          "content": "DocuMind sample | Fictional policies | October 2026\n1\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nPeople and working hours\n1.1 Working week\nNorthstar Supply is a fictional company used for this DocuMind demonstration. The normal working week\nis Monday through Friday. Office hours are 09:00 to 17:00 Nepal Standard Time, with a one-hour lunch\nbreak. Employees work from the Kathmandu office on Tuesday and Thursday and may work remotely on\nthe other working days. A manager can approve a different arrangement for a specific week. Any change\nmust be recorded in the team calendar so colleagues can plan coverage. Public holidays follow the annual\ncompany calendar rather than an individual employee's preferred schedule.\n1.2 Annual leave\nEvery full-time employee receives 20 days of paid annual leave per calendar year. Employees joining\nduring the year receive a prorated allowance. Request annual leave at least five working days before the\nfirst day away. The line manager approves requests after checking team coverage. Up to five unused\ndays may carry over into the following year, and those carried days expire on March 31. Leave is counted\nin working days; weekends and company public holidays do not reduce the allowance. An employee\nshould arrange a handover before leaving and add an out-of-office message naming the colleague\nproviding cover.\n1.3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick",
+          "similarity": 0.5866225957870483,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "91aa0567-9800-4f8a-a40b-9cbc33cfea73",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 4,
+          "page": 3,
+          "content": "DocuMind sample | Fictional policies | October 2026\n3\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nSecurity and expenses\n3.1 Data handling\nCustomer addresses, phone numbers, and payment references are confidential. Staff may view only the\nrecords required for their assigned work. Customer data must not be copied into personal email accounts\nor shared in public chat channels. Lock your screen whenever leaving your desk. Suspected data\nexposure must be reported to security@northstar.example within one hour of discovery. Include what\nhappened, when it was noticed, and which records may have been affected. Do not delete evidence while\ninvestigating. The security team coordinates containment and determines whether any external\nnotification is required. A colleague's access does not grant you permission to view the same records.\n3.2 Access and retention\nUse a unique company account and enable multi-factor authentication. Never share passwords or\nauthentication codes. IT removes departing employees' access by 18:00 on their final working day.\nInternal policy documents are retained for three years after replacement. Support tickets are retained for\ntwo years after closure. These retention periods apply to the company's managed systems; employees\nmust not maintain separate personal archives. Access requests need approval from both the line manager\nand the data owner. If a request is denied, contact the approvers for clarification rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR",
+          "similarity": 0.5777871012687683,
+          "keyword_match": false
+        }
+      ],
+      "answer": {
+        "answer": "Refunds are processed within seven working days after the warehouse accepts a return [1].",
+        "citations": [
+          {
+            "source_id": 1,
+            "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+            "filename": "handbook.pdf",
+            "chunk_index": 2,
+            "page": 2,
+            "snippet": "DocuMind sample | Fictional policies | October 2026\n2\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nOrders and customer support\n2.1 Shipping policy\nStandard domestic shipping takes three to five working days after dispatch. Express shipping takes one to\ntwo working days after dispatch and costs NPR 350 per order. Standard shipping is free for orders valued\nat NPR 3,000 or more; smaller orders have a NPR 150 shipping fee. Estimated shipping times exclude\npublic holidays. Customers receive a tracking reference"
+          }
+        ],
+        "refused": false,
+        "retrieval_mode": "vector",
+        "model": "gemini-3.5-flash-lite",
+        "latency_ms": 1608,
+        "route": "rag",
+        "confirmation": null
+      },
+      "latency_ms": 1608,
+      "hit_at_5": true,
+      "error": null,
+      "supported": null,
+      "correct": null,
+      "review_notes": ""
+    },
+    {
+      "case": {
+        "id": "q12",
+        "question": "How quickly should suspected data exposure be reported, and to whom?",
+        "expected_answer": "Within one hour of discovery, to security@northstar.example.",
+        "section": "3.1 Data handling",
+        "page": 3,
+        "evidence": [
+          "within one hour of discovery",
+          "security@northstar.example"
+        ],
+        "expected_refusal": false
+      },
+      "chunk_size": 300,
+      "retrieval_mode": "vector",
+      "chunks": [
+        {
+          "chunk_id": "91aa0567-9800-4f8a-a40b-9cbc33cfea73",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 4,
+          "page": 3,
+          "content": "DocuMind sample | Fictional policies | October 2026\n3\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nSecurity and expenses\n3.1 Data handling\nCustomer addresses, phone numbers, and payment references are confidential. Staff may view only the\nrecords required for their assigned work. Customer data must not be copied into personal email accounts\nor shared in public chat channels. Lock your screen whenever leaving your desk. Suspected data\nexposure must be reported to security@northstar.example within one hour of discovery. Include what\nhappened, when it was noticed, and which records may have been affected. Do not delete evidence while\ninvestigating. The security team coordinates containment and determines whether any external\nnotification is required. A colleague's access does not grant you permission to view the same records.\n3.2 Access and retention\nUse a unique company account and enable multi-factor authentication. Never share passwords or\nauthentication codes. IT removes departing employees' access by 18:00 on their final working day.\nInternal policy documents are retained for three years after replacement. Support tickets are retained for\ntwo years after closure. These retention periods apply to the company's managed systems; employees\nmust not maintain separate personal archives. Access requests need approval from both the line manager\nand the data owner. If a request is denied, contact the approvers for clarification rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR",
+          "similarity": 0.6888908743858337,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "65538026-aefd-4805-a683-8b8b32c6a75e",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 3,
+          "page": 2,
+          "content": "commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The support mailbox is\nsupport@northstar.example. Creating a support ticket requires the customer to confirm the proposed\ndescription before it is submitted. A confirmation is not a guarantee of a refund or replacement. If the order\ndatabase cannot be reached, explain that the status is temporarily unavailable and ask the customer to\nretry. Never infer live status from these policy timings.",
+          "similarity": 0.6164311170578003,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7d73d8d-c1a7-4d39-b132-dd01c5d66ea7",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 5,
+          "page": 3,
+          "content": "rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR 1,200 per\nday. Taxi expenses above NPR 2,000 require prior manager approval. Finance reviews complete claims\nevery Friday, and approved claims are paid in the next payroll cycle. Missing receipts delay review.\nPersonal purchases and fines are not reimbursed. Foreign travel requires written approval before booking,\nbut this handbook does not specify international meal allowances. Ask Finance for that policy rather than\nassuming domestic limits apply abroad. All figures in this handbook are fictional demo data.",
+          "similarity": 0.6000598311388604,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "195bd0da-b41c-40cd-a609-5730d0ad45d2",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 2,
+          "page": 2,
+          "content": "DocuMind sample | Fictional policies | October 2026\n2\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nOrders and customer support\n2.1 Shipping policy\nStandard domestic shipping takes three to five working days after dispatch. Express shipping takes one to\ntwo working days after dispatch and costs NPR 350 per order. Standard shipping is free for orders valued\nat NPR 3,000 or more; smaller orders have a NPR 150 shipping fee. Estimated shipping times exclude\npublic holidays. Customers receive a tracking reference after dispatch. A policy document explains\nshipping rules but cannot tell you the current status of a specific order. Current order status must be\nlooked up in the order database. A tracking reference does not prove that the parcel has been delivered.\n2.2 Returns and refunds\nUnused products may be returned within 14 calendar days of delivery. Customers must retain the original\npackaging and provide an order reference. Damaged products should be reported within 48 hours of\ndelivery, with a photograph of the product and packaging. Refunds are processed within seven working\ndays after the warehouse accepts a return. Refunds go to the original payment method. Custom-made\nproducts cannot be returned unless they are damaged or incorrectly supplied. The support team must not\npromise a refund before checking eligibility. Return transport for an approved damaged product is paid by\nthe company.\n2.3 Support commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The",
+          "similarity": 0.582699179649353,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7dbd587-5b7c-469e-8f71-9f7a4e0a97a3",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 1,
+          "page": 1,
+          "content": "3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick leave does not carry over. The company supplies one laptop and\none headset to each full-time employee. Report lost equipment to the IT help desk immediately. Home\ninternet reimbursement is capped at NPR 1,500 per month and requires a receipt. Equipment must be\nreturned within three working days of the final employment date. These rules apply to employees, not\nindependent contractors.",
+          "similarity": 0.578467743947141,
+          "keyword_match": false
+        }
+      ],
+      "answer": {
+        "answer": "Suspected data exposure must be reported to security@northstar.example within one hour of discovery [1].",
+        "citations": [
+          {
+            "source_id": 1,
+            "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+            "filename": "handbook.pdf",
+            "chunk_index": 4,
+            "page": 3,
+            "snippet": "DocuMind sample | Fictional policies | October 2026\n3\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nSecurity and expenses\n3.1 Data handling\nCustomer addresses, phone numbers, and payment references are confidential. Staff may view only the\nrecords required for their assigned work. Customer data must not be copied into personal email accounts\nor shared in public chat channels. Lock your screen whenever leaving your desk. Suspected data\nexposure must be reported to security@northstar.example within one hour of"
+          }
+        ],
+        "refused": false,
+        "retrieval_mode": "vector",
+        "model": "gemini-3.5-flash-lite",
+        "latency_ms": 1868,
+        "route": "rag",
+        "confirmation": null
+      },
+      "latency_ms": 1868,
+      "hit_at_5": true,
+      "error": null,
+      "supported": null,
+      "correct": null,
+      "review_notes": ""
+    },
+    {
+      "case": {
+        "id": "q13",
+        "question": "What was Northstar's revenue in 2025?",
+        "expected_answer": "Refuse: revenue is not stated in the document.",
+        "section": null,
+        "page": null,
+        "evidence": [],
+        "expected_refusal": true
+      },
+      "chunk_size": 300,
+      "retrieval_mode": "vector",
+      "chunks": [
+        {
+          "chunk_id": "91aa0567-9800-4f8a-a40b-9cbc33cfea73",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 4,
+          "page": 3,
+          "content": "DocuMind sample | Fictional policies | October 2026\n3\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nSecurity and expenses\n3.1 Data handling\nCustomer addresses, phone numbers, and payment references are confidential. Staff may view only the\nrecords required for their assigned work. Customer data must not be copied into personal email accounts\nor shared in public chat channels. Lock your screen whenever leaving your desk. Suspected data\nexposure must be reported to security@northstar.example within one hour of discovery. Include what\nhappened, when it was noticed, and which records may have been affected. Do not delete evidence while\ninvestigating. The security team coordinates containment and determines whether any external\nnotification is required. A colleague's access does not grant you permission to view the same records.\n3.2 Access and retention\nUse a unique company account and enable multi-factor authentication. Never share passwords or\nauthentication codes. IT removes departing employees' access by 18:00 on their final working day.\nInternal policy documents are retained for three years after replacement. Support tickets are retained for\ntwo years after closure. These retention periods apply to the company's managed systems; employees\nmust not maintain separate personal archives. Access requests need approval from both the line manager\nand the data owner. If a request is denied, contact the approvers for clarification rather than asking a\ncolleague to retrieve the information on your behalf.\n3.3 Expense claims\nSubmit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the\nbusiness purpose. Meals during approved domestic business travel are reimbursed up to NPR",
+          "similarity": 0.6571384072303772,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "f84ae30e-059f-4049-8f4c-ba31f1360e77",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 0,
+          "page": 1,
+          "content": "DocuMind sample | Fictional policies | October 2026\n1\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nPeople and working hours\n1.1 Working week\nNorthstar Supply is a fictional company used for this DocuMind demonstration. The normal working week\nis Monday through Friday. Office hours are 09:00 to 17:00 Nepal Standard Time, with a one-hour lunch\nbreak. Employees work from the Kathmandu office on Tuesday and Thursday and may work remotely on\nthe other working days. A manager can approve a different arrangement for a specific week. Any change\nmust be recorded in the team calendar so colleagues can plan coverage. Public holidays follow the annual\ncompany calendar rather than an individual employee's preferred schedule.\n1.2 Annual leave\nEvery full-time employee receives 20 days of paid annual leave per calendar year. Employees joining\nduring the year receive a prorated allowance. Request annual leave at least five working days before the\nfirst day away. The line manager approves requests after checking team coverage. Up to five unused\ndays may carry over into the following year, and those carried days expire on March 31. Leave is counted\nin working days; weekends and company public holidays do not reduce the allowance. An employee\nshould arrange a handover before leaving and add an out-of-office message naming the colleague\nproviding cover.\n1.3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick",
+          "similarity": 0.6460813879966736,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "65538026-aefd-4805-a683-8b8b32c6a75e",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 3,
+          "page": 2,
+          "content": "commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The support mailbox is\nsupport@northstar.example. Creating a support ticket requires the customer to confirm the proposed\ndescription before it is submitted. A confirmation is not a guarantee of a refund or replacement. If the order\ndatabase cannot be reached, explain that the status is temporarily unavailable and ask the customer to\nretry. Never infer live status from these policy timings.",
+          "similarity": 0.6429095268249512,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "195bd0da-b41c-40cd-a609-5730d0ad45d2",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 2,
+          "page": 2,
+          "content": "DocuMind sample | Fictional policies | October 2026\n2\nNORTHSTAR SUPPLY / DEMO HANDBOOK\nOrders and customer support\n2.1 Shipping policy\nStandard domestic shipping takes three to five working days after dispatch. Express shipping takes one to\ntwo working days after dispatch and costs NPR 350 per order. Standard shipping is free for orders valued\nat NPR 3,000 or more; smaller orders have a NPR 150 shipping fee. Estimated shipping times exclude\npublic holidays. Customers receive a tracking reference after dispatch. A policy document explains\nshipping rules but cannot tell you the current status of a specific order. Current order status must be\nlooked up in the order database. A tracking reference does not prove that the parcel has been delivered.\n2.2 Returns and refunds\nUnused products may be returned within 14 calendar days of delivery. Customers must retain the original\npackaging and provide an order reference. Damaged products should be reported within 48 hours of\ndelivery, with a photograph of the product and packaging. Refunds are processed within seven working\ndays after the warehouse accepts a return. Refunds go to the original payment method. Custom-made\nproducts cannot be returned unless they are damaged or incorrectly supplied. The support team must not\npromise a refund before checking eligibility. Return transport for an approved damaged product is paid by\nthe company.\n2.3 Support commitments\nCustomer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General\nenquiries receive a first response within one working day. Damaged-order reports are marked high priority\nand receive a first response within four working hours. The",
+          "similarity": 0.6417021751403809,
+          "keyword_match": false
+        },
+        {
+          "chunk_id": "e7dbd587-5b7c-469e-8f71-9f7a4e0a97a3",
+          "document_id": "62a6e62e-cc35-4f47-9c7c-c27ccd101a1a",
+          "filename": "handbook.pdf",
+          "chunk_index": 1,
+          "page": 1,
+          "content": "3 Sick leave and equipment\nEmployees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00\non the first day of illness when possible. A medical certificate is required for absences longer than three\nconsecutive working days. Unused sick leave does not carry over. The company supplies one laptop and\none headset to each full-time employee. Report lost equipment to the IT help desk immediately. Home\ninternet reimbursement is capped at NPR 1,500 per month and requires a receipt. Equipment must be\nreturned within three working days of the final employment date. These rules apply to employees, not\nindependent contractors.",
+          "similarity": 0.5773592167305716,
+          "keyword_match": false
+        }
+      ],
+      "answer": {
+        "answer": "I don't know based on the uploaded documents.",
+        "citations": [],
+        "refused": true,
+        "retrieval_mode": "vector",
+        "model": "gemini-3.5-flash-lite",
+        "latency_ms": 1881,
+        "route": "rag",
+        "confirmation": null
+      },
+      "latency_ms": 1881,
+      "hit_at_5": null,
+      "error": null,
+      "supported": null,
+      "correct": null,
+      "review_notes": ""
+    }
+  ]
+}

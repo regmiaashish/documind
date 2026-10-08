@@ -1,0 +1,58 @@
+People and working hours
+
+1.1 Working week
+
+Northstar Supply is a fictional company used for this DocuMind demonstration. The normal working week is Monday through Friday. Office hours are 09:00 to 17:00 Nepal Standard Time, with a one-hour lunch break. Employees work from the Kathmandu office on Tuesday and Thursday and may work remotely on the other working days. A manager can approve a different arrangement for a specific week. Any change must be recorded in the team calendar so colleagues can plan coverage. Public holidays follow the annual company calendar rather than an individual employee's preferred schedule.
+
+
+
+1.2 Annual leave
+
+Every full-time employee receives 20 days of paid annual leave per calendar year. Employees joining during the year receive a prorated allowance. Request annual leave at least five working days before the first day away. The line manager approves requests after checking team coverage. Up to five unused days may carry over into the following year, and those carried days expire on March 31. Leave is counted in working days; weekends and company public holidays do not reduce the allowance. An employee should arrange a handover before leaving and add an out-of-office message naming the colleague providing cover.
+
+
+
+1.3 Sick leave and equipment
+
+Employees receive 10 days of paid sick leave each calendar year. Notify the line manager before 09:00 on the first day of illness when possible. A medical certificate is required for absences longer than three consecutive working days. Unused sick leave does not carry over. The company supplies one laptop and one headset to each full-time employee. Report lost equipment to the IT help desk immediately. Home internet reimbursement is capped at NPR 1,500 per month and requires a receipt. Equipment must be returned within three working days of the final employment date. These rules apply to employees, not independent contractors.
+
+
+
+Orders and customer support
+
+2.1 Shipping policy
+
+Standard domestic shipping takes three to five working days after dispatch. Express shipping takes one to two working days after dispatch and costs NPR 350 per order. Standard shipping is free for orders valued at NPR 3,000 or more; smaller orders have a NPR 150 shipping fee. Estimated shipping times exclude public holidays. Customers receive a tracking reference after dispatch. A policy document explains shipping rules but cannot tell you the current status of a specific order. Current order status must be looked up in the order database. A tracking reference does not prove that the parcel has been delivered.
+
+
+
+2.2 Returns and refunds
+
+Unused products may be returned within 14 calendar days of delivery. Customers must retain the original packaging and provide an order reference. Damaged products should be reported within 48 hours of delivery, with a photograph of the product and packaging. Refunds are processed within seven working days after the warehouse accepts a return. Refunds go to the original payment method. Custom-made products cannot be returned unless they are damaged or incorrectly supplied. The support team must not promise a refund before checking eligibility. Return transport for an approved damaged product is paid by the company.
+
+
+
+2.3 Support commitments
+
+Customer support is available Monday through Friday from 09:00 to 18:00 Nepal Standard Time. General enquiries receive a first response within one working day. Damaged-order reports are marked high priority and receive a first response within four working hours. The support mailbox is support@northstar.example. Creating a support ticket requires the customer to confirm the proposed description before it is submitted. A confirmation is not a guarantee of a refund or replacement. If the order database cannot be reached, explain that the status is temporarily unavailable and ask the customer to retry. Never infer live status from these policy timings.
+
+
+
+Security and expenses
+
+3.1 Data handling
+
+Customer addresses, phone numbers, and payment references are confidential. Staff may view only the records required for their assigned work. Customer data must not be copied into personal email accounts or shared in public chat channels. Lock your screen whenever leaving your desk. Suspected data exposure must be reported to security@northstar.example within one hour of discovery. Include what happened, when it was noticed, and which records may have been affected. Do not delete evidence while investigating. The security team coordinates containment and determines whether any external notification is required. A colleague's access does not grant you permission to view the same records.
+
+
+
+3.2 Access and retention
+
+Use a unique company account and enable multi-factor authentication. Never share passwords or authentication codes. IT removes departing employees' access by 18:00 on their final working day. Internal policy documents are retained for three years after replacement. Support tickets are retained for two years after closure. These retention periods apply to the company's managed systems; employees must not maintain separate personal archives. Access requests need approval from both the line manager and the data owner. If a request is denied, contact the approvers for clarification rather than asking a colleague to retrieve the information on your behalf.
+
+
+
+3.3 Expense claims
+
+Submit expense claims within 30 calendar days of the purchase. Attach a legible receipt and state the business purpose. Meals during approved domestic business travel are reimbursed up to NPR 1,200 per day. Taxi expenses above NPR 2,000 require prior manager approval. Finance reviews complete claims every Friday, and approved claims are paid in the next payroll cycle. Missing receipts delay review. Personal purchases and fines are not reimbursed. Foreign travel requires written approval before booking, but this handbook does not specify international meal allowances. Ask Finance for that policy rather than assuming domestic limits apply abroad. All figures in this handbook are fictional demo data.
+
