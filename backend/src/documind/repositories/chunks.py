@@ -18,6 +18,31 @@ COLUMNS = """c.id AS chunk_id, c.document_id, d.filename, c.chunk_index, c.page,
     1 - (c.embedding <=> $7::vector) AS similarity"""
 
 
+QUESTION_WORDS = {
+    "what",
+    "which",
+    "who",
+    "whose",
+    "where",
+    "when",
+    "why",
+    "how",
+    "much",
+    "many",
+    "please",
+    "tell",
+}
+
+
+def keyword_query(question: str) -> str:
+    """Remove question framing; PostgreSQL still handles stemming and stop words."""
+    return " ".join(
+        term
+        for term in re.findall(r"[^\W_]+(?:[-'][^\W_]+)*", question.lower())
+        if term not in QUESTION_WORDS
+    )
+
+
 async def search_chunks(
     pool: asyncpg.Pool,
     owner_id: UUID,
@@ -27,14 +52,16 @@ async def search_chunks(
 ) -> list[RetrievedChunk]:
     # All interpolated SQL fragments are fixed program text; values use parameters.
     if keyword:
-        terms = [term for term in re.findall(r"[A-Za-z0-9]+", request.question) if len(term) > 2]
-        patterns = [f"%{term}%" for term in terms]
+        query = keyword_query(request.question)
+        if not query:
+            return []
+        # PostgreSQL full-text search stems words and removes stop words. Generic
+        # substrings (e.g. "who" inside "whole") must not become lexical evidence.
         sql = f"""SELECT {COLUMNS}, true AS keyword_match {ELIGIBLE}
-            AND (c.tsv @@ websearch_to_tsquery('english', $9)
-                 OR c.content ILIKE ANY($8::text[]))
-            ORDER BY ts_rank_cd(c.tsv, websearch_to_tsquery('english', $9)) DESC, c.id
-            LIMIT $10"""
-        extra = [patterns, request.question, settings.retrieval_candidates]
+            AND c.tsv @@ plainto_tsquery('english', $8)
+            ORDER BY ts_rank_cd(c.tsv, plainto_tsquery('english', $8)) DESC, c.id
+            LIMIT $9"""
+        extra = [query, settings.retrieval_candidates]
     else:
         sql = f"""SELECT {COLUMNS}, false AS keyword_match {ELIGIBLE}
             ORDER BY c.embedding <=> $7::vector, c.id LIMIT $8"""

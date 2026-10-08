@@ -214,3 +214,39 @@ async def test_vector_and_keyword_search_enforce_owner_and_document_filters(pool
         )
     assert await get_chunk(pool, UUID(int=2), alice.document_id, 0) is None
     assert (await get_chunk(pool, ALICE, alice.document_id, 0))["content"] == "20 days annual leave"
+
+
+async def test_keyword_search_does_not_match_generic_words_or_substrings(pool):
+    from documind.repositories.chunks import search_chunks
+    from documind.schemas.chat import ChatRequest
+
+    await save(pool)
+    vector = [1.0] + [0.0] * 767
+    for question in (
+        "What are the days on Mars?",
+        "Who is the president?",
+        "What is a newsletter?",
+    ):
+        assert (
+            await search_chunks(
+                pool,
+                ALICE,
+                ChatRequest(question=question),
+                vector,
+                keyword=True,
+            )
+            == []
+        )
+    for question in (
+        "How much annual leave?",
+        "How many annual leave days?",
+        "Tell me about annual leave",
+    ):
+        hits = await search_chunks(
+            pool,
+            ALICE,
+            ChatRequest(question=question),
+            vector,
+            keyword=True,
+        )
+        assert len(hits) == 1

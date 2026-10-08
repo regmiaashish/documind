@@ -262,8 +262,12 @@ similarity. `hybrid` combines cosine search with PostgreSQL English full-text se
 using reciprocal-rank fusion. `hybrid_rerank` applies a bounded Gemini relevance pass.
 
 Every branch applies owner, optional document IDs, upload-date range, embedding model,
-and chunk-size filters inside SQL. The cosine threshold is applied before generation;
-weak context returns `I don't know based on the uploaded documents.` without calling
+and chunk-size filters inside SQL. Vector-only retrieval uses the cosine threshold;
+hybrid also admits full-text matches. In reranked mode, up to 12 candidates reach the
+semantic reranker before cosine filtering can discard paraphrased evidence. Its
+relevance cutoff is 0.5, and rejected passages are not restored by keyword matching.
+Full-text search uses stemming and stop-word removal, not arbitrary substrings.
+Weak context returns `I don't know based on the uploaded documents.` without calling
 the answer model. The prompt uses only supplied context, treats document text as
 untrusted, and requires markers such as `[1]` or `[1, 2]`. Post-processing removes
 unknown markers and rejects answers without usable source references. Citation metadata

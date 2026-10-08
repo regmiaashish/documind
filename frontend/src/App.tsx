@@ -80,7 +80,7 @@ export default function App() {
     void ask(value.trim(), activeDocument);
   }
 
-  const suggestions = ['Summarize this document', 'What are the key policies?', 'What does it say about annual leave?'];
+  const suggestions = ['Summarize this document', 'What are the main takeaways?', 'List the important dates or deadlines'];
   return <div className="app">
     <header className="topbar">
       <a className="brand" href="/" aria-label="DocuMind home"><span className="brand-mark"><Icon name="file" size={22} /></span>DocuMind</a>
@@ -94,19 +94,19 @@ export default function App() {
         deleting={deleting} onDelete={document => void remove(document)}
         notice={notice} error={error} onUpload={upload} onSelect={setSelected} retryLabel={retryDeletion ? 'Retry deletion' : retryFile ? 'Retry upload' : 'Retry loading documents'} onRefresh={() => retryDeletion ? void remove(retryDeletion) : retryFile ? void upload(retryFile) : setRefresh(value => value + 1)} />
       <main className="chat-panel">
-        <div className="chat-heading"><div><span className="eyebrow">ASK YOUR DOCUMENTS</span><h1>{activeDocument ? 'A conversation with your document' : 'Your documents, made clear.'}</h1>
+        <div className="chat-heading"><div><span className="eyebrow">DOCUMENT CHAT</span><h1>{activeDocument ? 'Ask your document' : 'Your document workspace'}</h1>
           <p>{activeDocument ? <><span className="small-dot" /> {activeDocument.filename}</> : 'Upload a document. Ask a question. See the source.'}</p></div>
           {messages.length > 0 && <button className="quiet-button" onClick={clear} disabled={busy}>Clear chat</button>}
         </div>
         <div className="conversation">
           {!messages.length && <section className="welcome">
             <span className="welcome-icon"><Icon name="spark" size={30} /></span>
-            <span className="eyebrow">LESS SEARCHING. MORE UNDERSTANDING.</span>
-            <h2>{activeDocument ? 'What would you like to know?' : 'Find the answers in your files.'}</h2>
-            <p>{activeDocument ? 'Ask in your own words. Every supported answer points back to the passages it used.' : 'Bring your policies, handbooks, or notes. DocuMind answers from your documents and shows you where to look.'}</p>
+            <span className="eyebrow">{activeDocument ? 'READY TO READ' : 'GET STARTED'}</span>
+            <h2>{activeDocument ? 'What would you like to know?' : 'Start with a document.'}</h2>
+            <p>{activeDocument ? 'Ask a question or start with a summary. Open the sources to check the answer.' : 'Upload a PDF or text file, then ask about its contents. Answers include the passages they came from.'}</p>
             {activeDocument ? <div className="suggestions">{suggestions.map(text => <button key={text} onClick={() => send(text)}>{text}<Icon name="arrow" size={16} /></button>)}</div> :
               <div className="steps"><span><b>01</b> Upload a PDF or text file</span><span><b>02</b> Ask about its contents</span><span><b>03</b> Open the cited passages</span></div>}
-            <span className="grounding-note">If your document doesn't contain the answer, we'll say so.</span>
+            <span className="grounding-note">Answers are based on the selected document.</span>
           </section>}
           {messages.map(message => <article className="exchange" key={message.id}>
             <div className="question-bubble">{message.question}</div>
@@ -125,12 +125,12 @@ export default function App() {
           <div ref={end} />
         </div>
         <div className="composer-wrap"><form className="composer" onSubmit={event => { event.preventDefault(); send(); }}>
-          <textarea aria-label="Your question" placeholder={activeDocument ? 'Ask about your document, an order, or a support ticket…' : 'Ask about an order or request a support ticket…'} value={question} maxLength={2000}
+          <textarea aria-label="Your question" placeholder={activeDocument ? 'Ask a question about this document…' : 'Ask about an order or request a support ticket…'} value={question} maxLength={2000}
             disabled={busy || uploading || !!deleting} rows={question.includes('\n') ? 2 : 1} onChange={event => setQuestion(event.target.value)} onKeyDown={event => {
               if (event.key === 'Enter' && !event.shiftKey && !event.nativeEvent.isComposing) { event.preventDefault(); send(); }
             }} />
           <button className="send-button" type="submit" aria-label="Send question" disabled={busy || uploading || !!deleting || !question.trim()}><Icon name="send" size={21} /></button>
-        </form><p className="composer-note">Answers use your selected document. Check the sources for important details.</p></div>
+        </form><p className="composer-note">Check cited sources before relying on an answer. You can also ask about orders or support tickets.</p></div>
       </main>
     </div>
   </div>;
