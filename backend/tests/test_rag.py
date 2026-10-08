@@ -89,9 +89,9 @@ def test_valid_citations_are_backed_by_actual_metadata():
     assert citations[0].page == 1 and citations[0].snippet == chunk().content
 
 
-async def test_weak_context_skips_reranker(monkeypatch):
+async def test_reranker_rejects_weak_context(monkeypatch):
     search = AsyncMock(return_value=[chunk(similarity=0.1)])
-    rank = AsyncMock()
+    rank = AsyncMock(return_value=[])
     monkeypatch.setattr("documind.services.retrieval.search_chunks", search)
     monkeypatch.setattr("documind.services.retrieval.rerank", rank)
     embeddings = AsyncMock()
@@ -102,7 +102,7 @@ async def test_weak_context_skips_reranker(monkeypatch):
         == []
     )
     assert search.await_count == 2
-    rank.assert_not_awaited()
+    rank.assert_awaited_once()
 
 
 async def test_exact_keyword_match_reaches_reranker_below_vector_threshold(monkeypatch):
@@ -124,7 +124,7 @@ async def test_exact_keyword_match_reaches_reranker_below_vector_threshold(monke
     rank.assert_awaited_once()
 
 
-async def test_exact_keyword_match_survives_empty_reranker_result(monkeypatch):
+async def test_keyword_match_cannot_override_reranker_rejection(monkeypatch):
     hit = chunk(similarity=0.1, keyword_match=True)
     search = AsyncMock(side_effect=[[chunk(similarity=0.1)], [hit]])
     monkeypatch.setattr("documind.services.retrieval.search_chunks", search)
@@ -137,7 +137,7 @@ async def test_exact_keyword_match_survives_empty_reranker_result(monkeypatch):
         ChatRequest(question="SkyGuard"),
         "hybrid_rerank",
     )
-    assert result == [hit]
+    assert result == []
 
 
 @pytest.mark.parametrize("mode,calls", [("vector", 1), ("hybrid", 2)])
@@ -228,3 +228,102 @@ async def test_provider_error_becomes_safe_stream_event(monkeypatch):
         ("error", {"code": "provider_failure", "message": "Please retry.", "status": 503}),
         ("done", {}),
     ]
+
+
+@pytest.mark.parametrize(
+    "question",
+    [
+        "What is the yearly paid holiday allowance?",
+        "How much paid time off do full-time staff get?",
+        "How many vacation days are employees entitled to?",
+    ],
+)
+async def test_paraphrase_below_cosine_gate_can_reach_cited_answer(monkeypatch, question):
+    evidence = chunk(similarity=0.3)
+    search = AsyncMock(side_effect=[[evidence], []])
+    monkeypatch.setattr("documind.services.retrieval.search_chunks", search)
+
+    class LLM:
+        async def generate(self, system, prompt):
+            assert question in prompt and evidence.content in prompt
+            assert "paraphrases" in system
+            return '{"sources":[{"source_id":1,"relevance":0.9}]}'
+
+        async def stream(self, system, prompt):
+            assert question in prompt and evidence.content in prompt
+            yield "Employees receive 20 days of paid annual leave [1].", "test-model"
+
+    events = [
+        event
+        async for event in guarded_events(
+            None,
+            AsyncMock(),
+            LLM(),
+            UUID(int=1),
+            ChatRequest(question=question, retrieval_mode="hybrid_rerank"),
+        )
+    ]
+    result = next(data for event, data in events if event == "answer")
+    assert not result["refused"]
+    assert result["citations"][0]["document_id"] == str(evidence.document_id)
+    assert "20 days" in result["answer"]
+
+
+async def test_rejected_paraphrase_candidate_never_reaches_generation(monkeypatch):
+    evidence = chunk(similarity=0.3)
+    monkeypatch.setattr(
+        "documind.services.retrieval.search_chunks",
+        AsyncMock(
+            side_effect=[[evidence], []],
+        ),
+    )
+    llm = AsyncMock()
+    llm.generate.return_value = '{"sources":[{"source_id":1,"relevance":0.1}]}'
+    events = [
+        event
+        async for event in guarded_events(
+            None,
+            AsyncMock(),
+            llm,
+            UUID(int=1),
+            ChatRequest(
+                question="What is the yearly asteroid allowance?", retrieval_mode="hybrid_rerank"
+            ),
+        )
+    ]
+    result = next(data for event, data in events if event == "answer")
+    assert result["refused"] and result["citations"] == []
+    llm.stream.assert_not_called()
+
+
+@pytest.mark.parametrize(
+    "question,expected",
+    [
+        ("How much annual leave?", "annual leave"),
+        ("How many annual leave days?", "annual leave days"),
+        ("What are the days on Mars?", "are the days on mars"),
+        ("Who is SkyGuard?", "is skyguard"),
+        ("What is ORD-1001?", "is ord-1001"),
+    ],
+)
+async def test_keyword_query_removes_framing_without_losing_subject(question, expected):
+    from documind.repositories.chunks import search_chunks
+
+    pool = AsyncMock()
+    pool.fetch.return_value = []
+    await search_chunks(pool, UUID(int=1), ChatRequest(question=question), [1.0], keyword=True)
+    assert pool.fetch.await_args.args[-2] == expected
+    assert "plainto_tsquery" in pool.fetch.await_args.args[0]
+
+
+async def test_question_only_keyword_query_skips_database():
+    from documind.repositories.chunks import search_chunks
+
+    pool = AsyncMock()
+    assert (
+        await search_chunks(
+            pool, UUID(int=1), ChatRequest(question="How much?"), [1.0], keyword=True
+        )
+        == []
+    )
+    pool.fetch.assert_not_awaited()

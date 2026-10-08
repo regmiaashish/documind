@@ -1,5 +1,3 @@
-"""Bounded Gemini text generation and native SSE streaming with model fallback."""
-
 import json
 from collections.abc import AsyncIterator
 

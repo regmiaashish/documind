@@ -16,7 +16,7 @@ router = APIRouter(prefix="/chat-messages", tags=["chat"])
 
 
 @router.post("", response_model=ChatAnswer, responses={200: {"content": {"text/event-stream": {}}}})
-@limiter.limit("3/minute")
+@limiter.limit("5/minute")
 async def create_message(
     request: Request, body: ChatRequest, pool: Pool, user_id: User, embeddings: Embeddings, llm: LLM
 ) -> StreamingResponse | ChatAnswer:

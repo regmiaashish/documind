@@ -93,6 +93,8 @@ async def answer_events(
     citations = []
     refused = True
     model = None
+    if not chunks:
+        logger.info("RAG refused: reason=no_relevant_context mode=%s", mode)
     if chunks:
         yield "status", {"message": "Reading your documents"}
         prompt = json.dumps(
@@ -123,6 +125,7 @@ async def answer_events(
         draft = "".join(pieces)
         text, citations, refused = validate_answer(draft, chunks)
         if refused and not draft.strip().lower().startswith("i don't know"):
+            logger.info("RAG repairing references: reason=invalid_draft_citations")
             yield "status", {"message": "Formatting source references"}
             repair = json.loads(prompt)
             repair["draft"] = draft
