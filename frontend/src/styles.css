@@ -175,10 +175,13 @@ p, h1, h2, h3, h4 {
 .document-list {
   margin-top: 22px;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 8px;
 }
 .document-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-width: 0;
   align-items: center;
   text-align: left;
   gap: 10px;
