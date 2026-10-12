@@ -330,3 +330,34 @@ handoff; do not treat sample expectations as measured evaluation results.
 
 See [the submission readiness review](docs/READINESS.md) for the assignment checklist
 and remaining acceptance/evaluation work.
+
+## Key technical decisions and tradeoffs
+
+| Decision | Reason and tradeoff |
+| --- | --- |
+| asyncpg SQL + Alembic, without ORM `models.py` | Ownership and transactions are explicit. Migrations own the schema and Pydantic validates API data; unused ORM models would duplicate that description. Schema/query changes must be kept consistent. |
+| Synchronous ingestion | Keeps a small application easy to run without a worker/queue. Large uploads hold the request open. |
+| Gemini embedding-2, normalized 768-dimensional vectors | Remote multilingual semantic embeddings avoid local model infrastructure; 768 dimensions bound storage. Quality must be measured on the supplied corpus, and provider quota/network availability are dependencies. |
+| Small primary model with fallback | Defaults are `gemini-3.5-flash-lite` and `gemini-3.8-flash`. This limits routine generation cost; fallback adds latency and shares provider availability/quota constraints. |
+| Vector, hybrid and reranked retrieval | Cosine search handles meaning; English full-text search adds lexical evidence. Reranking judges up to twelve scoped candidates before a cosine cutoff can discard paraphrases, at the cost of another model call. |
+| Separate relevance gates | Vector mode uses the cosine threshold; hybrid also admits full-text hits. Reranked mode uses a relevance cutoff of 0.5 and respects rejection. Thresholds remain provisional until evaluated. |
+| Citations and bounded repair | Prompts require context-only answers and citation markers. One repair handles incomplete references. Structural validation cannot prove every claim, so human-supported-answer evaluation remains necessary. |
+| Plain RAG before agent routing | Ordinary document questions avoid unnecessary tool planning. Explicit tool requests get three planning steps, validated arguments, bounded timeouts/retry and estimated token/cost budgets. |
+| Explicit confirmation for writes | The model prepares a draft; the user authorizes ticket creation. Database locking and uniqueness prevent duplicate confirmation writes. |
+| Lightweight Compose packaging | Multi-stage Python slim and frontend nginx images keep deployment simple. Each service has its own build context and `.dockerignore`. A single VM is inexpensive operationally but has no high availability. |
+
+## What I would improve next
+
+1. Complete the reviewed evaluation, tune relevance gates from positive/negative cases,
+   and extend the corpus with paraphrases and more diverse documents.
+2. Add private authentication and per-account provider/storage quotas before opening
+   beyond shared demo users. The current in-memory rate limiter is process-local.
+3. Add background ingestion with progress reporting only when document sizes or measured
+   traffic justify a worker; add OCR if scanned PDFs become a real requirement.
+4. Add operational checks for provider failures, request latency, bounded logs and
+   restart/backup recovery. Benchmark the VM before claiming production capacity.
+5. Consider vector indexes and larger deployment resources when corpus size and measured
+   query latency justify them.
+
+The priority is verified answer quality and reproducible startup before additional
+infrastructure or features.
